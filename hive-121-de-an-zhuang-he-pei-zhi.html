@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    HIVE 1.2.1 的安装和配置
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-coffee"></i> Stardj Is Coding</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-12-20T16:23:00+01:00" pubdate>
+                            日 20 十二月 2015
+                        </time>
+                        <a href="/hive-121-de-an-zhuang-he-pei-zhi.html" rel="bookmark"><h1>HIVE 1.2.1 的安装和配置</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <h3>HIVE的那些事</h3>
+<p>HIVE是一个数据仓库，可以类比成数据库。但是它与传统数据库不同的是，HIVE是基于HDFS的，而传统的数据库是基于文件系统的。但是由于HIVE还是具有传统数据库的增、删、改、查功能，而HDFS中得文件是多读少写的，这显然不能符合数据库的需求，所以HIVE不能将元数据存在HDFS中。目前HIVE还是将元数据存在数据库中，如内嵌的Derby或者外联的Mysql中。</p>
+<h4>HIVE 1.2.1 的安装和配置</h4>
+<p>首先要安装hadoop，我这里的hadoop的版本是2.6.2，然后去<a href="http://hive.apache.org/downloads.html">Hive官网</a>下载1.2.1版本的Hive。</p>
+<p>首先将hive解压到对应的路径下：</p>
+<div class="highlight"><pre>tar -zxvf apache-hive-1.2.1-bin.tar.gz
+</pre></div>
+
+
+<p>接着修改环境变量:</p>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">HADOOP_HOME</span><span class="o">=</span>/Users/stardj/hadoop/hadoop-2.6.2
+<span class="nb">export </span><span class="nv">HIVE_HOME</span><span class="o">=</span>/Users/stardj/hive/apache-hive-1.2.1-bin
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HIVE_HOME</span>/bin
+<span class="nb">export </span><span class="nv">CLASS_PATH</span><span class="o">=</span><span class="nv">$CALSSPATH</span>:<span class="nv">$HIVE_HOME</span>/lib
+</pre></div>
+
+
+<p>然后修改hive的配置文件，路径为${HIVE_HOME}/conf。先修改hive_env.sh文件</p>
+<div class="highlight"><pre><span class="c"># Set HADOOP_HOME to point to a specific hadoop install directory</span>
+<span class="nb">export </span><span class="nv">HADOOP_HOME</span><span class="o">=</span>/Users/stardj/hadoop/hadoop-2.6.2
+<span class="c"># Hive Configuration Directory can be controlled by:</span>
+<span class="nb">export </span><span class="nv">HIVE_CONF_DIR</span><span class="o">=</span>/Users/stardj/hive/apache-hive-1.2.1-bin/conf
+</pre></div>
+
+
+<p>修改完hive_env.sh文件后，再将hive-default.xml.template复制并改名为hive-site.xml，清除里面得全部内容（因为hive会先加载default那个文件，再去加载site文件，如果两个文件里有相同得配置，那么以site为准，所以不必拷贝那么多，容易混淆）。</p>
+<div class="highlight"><pre>  <span class="nt">&lt;configuration&gt;</span>
+          <span class="nt">&lt;property&gt;</span>
+                  <span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionURL<span class="nt">&lt;/name&gt;</span>
+                  <span class="nt">&lt;value&gt;</span>jdbc:mysql://localhost/hive?createDatabaseIfNotExist=true<span class="nt">&lt;/value&gt;</span>
+          <span class="nt">&lt;/property&gt;</span>
+
+          <span class="nt">&lt;property&gt;</span>
+                  <span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionDriverName<span class="nt">&lt;/name&gt;</span>
+                  <span class="nt">&lt;value&gt;</span>com.mysql.jdbc.Driver<span class="nt">&lt;/value&gt;</span>
+                  <span class="nt">&lt;description&gt;</span>driver<span class="nt">&lt;/description&gt;</span>
+          <span class="nt">&lt;/property&gt;</span>
+          <span class="nt">&lt;property&gt;</span>
+                  <span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionUserName<span class="nt">&lt;/name&gt;</span>
+                  <span class="nt">&lt;value&gt;</span>hive<span class="nt">&lt;/value&gt;</span>
+                  <span class="nt">&lt;description&gt;</span>username<span class="nt">&lt;/description&gt;</span>
+          <span class="nt">&lt;/property&gt;</span>
+
+          <span class="nt">&lt;property&gt;</span>
+                  <span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionPassword<span class="nt">&lt;/name&gt;</span>
+                  <span class="nt">&lt;value&gt;</span>hive<span class="nt">&lt;/value&gt;</span>
+                  <span class="nt">&lt;description&gt;</span>password<span class="nt">&lt;/description&gt;</span>
+          <span class="nt">&lt;/property&gt;</span>
+  <span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+
+
+<p>至此，hive的基本配置已经完成，接下来就要配置hive来连接mysql数据库了。</p>
+<h4>HIVE HWI配置</h4>
+<p>Hive Web Interface（HWI）简介：Hive自带了一个Web-GUI，功能不多，可用于效果展示，如果没有安装Hue的话，是个不错的选择。</p>
+<p>由于hive-bin包中没有包含HWI的页面，只有Java代码编译好的jar包：hive-hwi-1.2.0.jar</p>
+<p>因此需要下载源码从中提取jsp文件并打包成war文件到hive-lib目录中：</p>
+<div class="highlight"><pre><span class="nb">cd </span>apache-hive-1.2.1-src/hwi
+jar cfM hive-hwi-1.2.1.war -C web .
+</pre></div>
+
+
+<p>然后将war包放到hive-lib目录下即可启动hwi服务：</p>
+<div class="highlight"><pre><span class="nv">hiveLogPath</span><span class="o">=</span><span class="s1">&#39;/var/log/hadoop/hive&#39;</span>
+<span class="nv">HIVE_HOME</span><span class="o">=</span><span class="s1">&#39;/usr/local/hive&#39;</span>
+mkdir -p <span class="nv">$hiveLogPath</span>
+nohup <span class="nv">$HIVE_HOME</span>/hive --service hiveserver2 &gt; <span class="nv">$hiveLogPath</span>/hiveserver2.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+nohup <span class="nv">$HIVE_HOME</span>/hive --service metastore &gt; <span class="nv">$hiveLogPath</span>/metastore.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+nohup <span class="nv">$HIVE_HOME</span>/hive --service hwi &gt; <span class="nv">$hiveLogPath</span>/hwi.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</pre></div>
+
+
+<p>修改hive-site.xml配置文件：</p>
+<div class="highlight"><pre><span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hive.hwi.war.file<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>lib/hive-hwi-1.2.1.war<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;description&gt;</span>This sets the path to the HWI war file, relative to ${HIVE_HOME}. <span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hive.hwi.listen.host<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>0.0.0.0<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;description&gt;</span>This is the host address the Hive Web Interface will listen on<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;property&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hive.hwi.listen.port<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;value&gt;</span>9999<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;description&gt;</span>This is the port the Hive Web Interface will listen on<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/property&gt;</span>
+</pre></div>
+
+
+<p>接着访问URL：<a href="http://master:9999/hwi/">http://master:9999/hwi/</a></p>
+<p>然而继续报错：</p>
+<p>ERROR compiler.Compiler: Javac exception </p>
+<p>Unable to find a javac compiler; com.sun.tools.javac.Main is not on the classpath.</p>
+<p>Perhaps JAVA_HOME does not point to the JDK. It is currently set to "/usr/local/java/jre"</p>
+<p>原因：jetty编译jsp类时，ant没有识别到正确的jdk路径。</p>
+<p>解决：ln -s $JAVA_HOME/lib/tools.jar $HIVE_HOME/lib/</p>
+<p>或者直接将jdk里地tools.jar考到hive/lib文件夹下。</p>
+<p>至此hive的hwi配置完成。</p>
+<h4>IDEA HIVE编程常见问题</h4>
+<ul>
+<li>启动指令报错</li>
+</ul>
+<p>运行如下指令时：</p>
+<div class="highlight"><pre>hive --service hiveserver <span class="p">&amp;</span>
+</pre></div>
+
+
+<p>报出如下的错误：</p>
+<div class="highlight"><pre>Starting Hive Thrift Server
+Exception in thread <span class="s2">&quot;main&quot;</span> java.lang.ClassNotFoundException: org.apache.hadoop.hive.service.HiveServer
+        at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:366<span class="o">)</span>
+        at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:355<span class="o">)</span>
+        at java.security.AccessController.doPrivileged<span class="o">(</span>Native Method<span class="o">)</span>
+        at java.net.URLClassLoader.findClass<span class="o">(</span>URLClassLoader.java:354<span class="o">)</span>
+        at java.lang.ClassLoader.loadClass<span class="o">(</span>ClassLoader.java:425<span class="o">)</span>
+        at java.lang.ClassLoader.loadClass<span class="o">(</span>ClassLoader.java:358<span class="o">)</span>
+        at java.lang.Class.forName0<span class="o">(</span>Native Method<span class="o">)</span>
+        at java.lang.Class.forName<span class="o">(</span>Class.java:274<span class="o">)</span>
+        at org.apache.hadoop.util.RunJar.run<span class="o">(</span>RunJar.java:214<span class="o">)</span>
+        at org.apache.hadoop.util.RunJar.main<span class="o">(</span>RunJar.java:136<span class="o">)</span>
+</pre></div>
+
+
+<p>查看下jar包，的确没这个类了，被hiveserver2取代了，所以如果遇到这样的问题，可以使用如下指令：</p>
+<div class="highlight"><pre>hive --service hiveserver2 <span class="p">&amp;</span>
+</pre></div>
+
+
+<ul>
+<li>java编程中报错</li>
+</ul>
+<p>在用java写hive jdbc连接HDFS时，报出一下错误：</p>
+<div class="highlight"><pre>java.lang.ClassNotFoundException: org.apache.hadoop.hive.jdbc.HiveDriver
+    at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:366<span class="o">)</span>
+    at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:355<span class="o">)</span>
+    at java.security.AccessController.doPrivileged<span class="o">(</span>Native Method<span class="o">)</span>
+    at java.net.URLClassLoader.findClass<span class="o">(</span>URLClassLoader.java:354<span class="o">)</span>
+    at java.lang.ClassLoader.loadClass<span class="o">(</span>ClassLoader.java:425<span class="o">)</span>
+    at sun.misc.Launcher<span class="nv">$AppClassLoader</span>.loadClass<span class="o">(</span>Launcher.java:308<span class="o">)</span>
+    at java.lang.ClassLoader.loadClass<span class="o">(</span>ClassLoader.java:358<span class="o">)</span>
+    at java.lang.Class.forName0<span class="o">(</span>Native Method<span class="o">)</span>
+    at java.lang.Class.forName<span class="o">(</span>Class.java:190<span class="o">)</span>
+    at HiveJdbcClient.main<span class="o">(</span>HiveJdbcClient.java:14<span class="o">)</span>
+</pre></div>
+
+
+<p>​   </p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/uncategorized.html">Uncategorized</a></p>
+                        <p>Tags: <a href="/tag/bei-wang-lu.html">备忘录</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="/theme/js/main.js"></script>
+    </body>
+</html>
