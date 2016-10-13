@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    secureCRT如何使用公共密钥登录
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href=""><h1><i class="icon-coffee"></i> Stardj Is Coding</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-12-20T16:35:00+01:00" pubdate>
+                            日 20 十二月 2015
+                        </time>
+                        <a href="/securecrtru-he-shi-yong-gong-gong-mi-yao-deng-lu.html" rel="bookmark"><h1>secureCRT如何使用公共密钥登录</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <h4>secureCRT如何使用公共密钥登录</h4>
+<p>其实网上的文档很多。各有千秋。估计是自己明白了，别人看起来比较费劲。这里我整理一下，以备自己查阅：</p>
+<p>配置过程分为两大部分，SecureCRT部分和Linux服务器部分。</p>
+<p>SecureCRT部分配置</p>
+<p>1、首先生成公钥。</p>
+<p>打开SecureCRT（我的版本为7.0，估计其他版本基本相同）程序，点击菜单栏的“工具”-》“创建公钥”。按照步骤执行。其中一步比较重要就是选择公钥的格式。建议选择“OpenSSH”,否则在<a href="https://www.baidu.com/s?wd=%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3PWIBPywWnWTYnWRLmyuh0AP8IA3qPjfsn1bkrjKxmLKz0ZNzUjdCIZwsrBtEXh9GuA7EQhF9pywdQhPEUiqkIyN1IA-EUBtkP1Rvnjm1rjc1n16YrHbLP1f3">服务器端</a>使用时需要转换为OpenSSH各式。何必多次一举呢。所以这里必须选择“OpenSSH”。如果选错了。重新生成一次就可以了。</p>
+<p>然后选择公钥私钥存放的地方。默认Identity是私钥，Identity.pub是公钥。</p>
+<p>2、把Identity.pub文件上传到你要登陆的Linux服务器上。方法有很多，比如ssh（先不要配置为公钥登陆），ftp等。具体操作自己搞定。上传时选择ASCII方式。</p>
+<p>3、在SecureCRT创建服务器连接。协议使用ssh。在“鉴权”方法中，取消勾选“密码”。选择“公钥”，然后点击右边的属性按钮，在对话框中。</p>
+<p><a href="http://g.hiphotos.baidu.com/zhidao/pic/item/aa64034f78f0f736691855be0f55b319eac413ae.jpg">!](http://g.hiphotos.baidu.com/zhidao/wh%3D600%2C800/sign=93209e7446166d2238221d92761325cf/aa64034f78f0f736691855be0f55b319eac413ae.jpg)</a></p>
+<p>使用全局公钥设置：表示所有连接都使用该公钥连接服务器。</p>
+<p>使用会话公钥设置：可以分别为每个连接指定不同的公钥。</p>
+<p>下面的路径就是指明私钥的具体路径。注意了，这里要指明私钥的路径。</p>
+<p>保存连接就可以了。</p>
+<p>Linux<a href="https://www.baidu.com/s?wd=%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3PWIBPywWnWTYnWRLmyuh0AP8IA3qPjfsn1bkrjKxmLKz0ZNzUjdCIZwsrBtEXh9GuA7EQhF9pywdQhPEUiqkIyN1IA-EUBtkP1Rvnjm1rjc1n16YrHbLP1f3">服务器端</a>配置</p>
+<p>1、sshd_conf配置</p>
+<p>主要修改如下几个内容：</p>
+<p>PermitRootLogin no # 默认为注释，先配置为禁止root用户登陆，允许root登陆太危险了。好几次差点犯错误。切记切记！</p>
+<p>RSAAuthentication yes #默认为注释， 启用 RSA 认证</p>
+<p>AuthorizedKeysFile .ssh/authorized_keys # 验证公钥的存放路径</p>
+<p>PubkeyAuthentication yes # 默认为注释，启用公钥认证</p>
+<p>PasswordAuthentication no # 禁止密码认证，默认是打开的。</p>
+<p>保持后，重新启动ssh服务。在不同的linux服务器上，重启的方法不同。</p>
+<p>RedHat,CentOS: service sshd restart      //redhat 7 的方法已经改了。</p>
+<p>openbsd,freebsd: /etc/rc.d/sshd restart</p>
+<p>2、重点部分：配置公钥存放哪的问题。</p>
+<p>要把第一部分上传上来的公钥放到用户home目录的.ssh/ 目录下。这里说明一下。如果你想使用test账号登陆，就要把公钥放到test账户的.ssh目录下。你可以直接把Identity.pub改为authorized_keys. 当然也可还是用其他方法。</p>
+<p>比如：cat Identity.pub &gt;&gt; authorized_keys</p>
+<p>另外说明一下。.ssh目录权限是700，authorized_keys文件权限为644.</p>
+<p>重点补充，如果还有其他人也想用自己的公钥登陆服务器，该如何操作呢？ 正常操作应该为该用户在服务器上创建一个账号，重新执行本次（Linux<a href="https://www.baidu.com/s?wd=%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3PWIBPywWnWTYnWRLmyuh0AP8IA3qPjfsn1bkrjKxmLKz0ZNzUjdCIZwsrBtEXh9GuA7EQhF9pywdQhPEUiqkIyN1IA-EUBtkP1Rvnjm1rjc1n16YrHbLP1f3">服务器端</a>配置，第2点）操作。当然，你也可以偷懒，把他的公钥也放到test账号的authorized_keys文件中。但两个公钥的内容之间使用换行符隔开。这样的方法还是不可取的。</p>
+<p>最后，使用SecureCRT登陆linux服务器。</p>
+<p>这里要注意，即使你使用公钥登陆服务器，当你连接的时候，还是要你输入用户名。为何呢？不是说公钥验证么？其实，服务器要知道用你的私钥和哪个用户的.ssh目录下的authorized_keys文件内容进行解密。不可能用你的私钥和所有的用户authorized_keys文件进行匹配测试。</p>
+<p>但是也有例外，如果你在<a href="https://www.baidu.com/s?wd=linux%E7%B3%BB%E7%BB%9F&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3PWIBPywWnWTYnWRLmyuh0AP8IA3qPjfsn1bkrjKxmLKz0ZNzUjdCIZwsrBtEXh9GuA7EQhF9pywdQhPEUiqkIyN1IA-EUBtkP1Rvnjm1rjc1n16YrHbLP1f3">linux系统</a>上使用公钥登陆Linux服务器，就不需要指明用户。方法如下：</p>
+<p># ssh 172.16.24.222</p>
+<p>为何呢？这时系统默认以为你登陆的远程账号就是你当前登陆的账号。</p>
+<p>如果你设置了公钥口令，连接时比如输入。为了安全，这个口令是必须要有的。在SecureCRT中，口令被翻译为：通行短语。呵呵。</p>
+<p>补充一下，在<a href="https://www.baidu.com/s?wd=linux%E7%B3%BB%E7%BB%9F&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3PWIBPywWnWTYnWRLmyuh0AP8IA3qPjfsn1bkrjKxmLKz0ZNzUjdCIZwsrBtEXh9GuA7EQhF9pywdQhPEUiqkIyN1IA-EUBtkP1Rvnjm1rjc1n16YrHbLP1f3">linux系统</a>上，如何创建公钥和私钥呢？</p>
+<p>方法很简单，执行ssh-keygen命令，按照提示就可以完成。完成后，自动会在当前用户的home目录，创建.ssh文件夹。</p>
+<p>服务器端配置和上面的方法相同。</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/uncategorized.html">Uncategorized</a></p>
+                        <p>Tags: <a href="/tag/bei-wang-lu.html">备忘录</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="/theme/js/main.js"></script>
+    </body>
+</html>
