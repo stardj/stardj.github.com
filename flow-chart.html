@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>secureCRT如何使用公共密钥登录 | Stardj is coding</title>
+    <title>Flow Chart | Stardj is coding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="" />
     <meta name="author" content="stardj" />
@@ -67,7 +67,7 @@
 						        <i class="icon-folder-open icon-large"></i>Algorithm
 					         </a>
                 </li>
-                <li >
+                <li class="active">
                   <a href="/category/ielts.html">
 						        <i class="icon-folder-open icon-large"></i>IELTS
 					         </a>
@@ -77,7 +77,7 @@
 						        <i class="icon-folder-open icon-large"></i>Machine Learning
 					         </a>
                 </li>
-                <li class="active">
+                <li >
                   <a href="/category/uncategorized.html">
 						        <i class="icon-folder-open icon-large"></i>Uncategorized
 					         </a>
@@ -100,14 +100,14 @@
     <div class="span2">
         <div class="well">
 <footer class="post-info">
-<abbr class="published" title="2015-12-20T16:35:00+08:00">
-    <i class="icon-calendar"></i>&nbsp;Sun 20 December 2015
+<abbr class="published" title="2016-04-10T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 10 April 2016
 </abbr>
 <br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
 
 
 <br/>
-	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+	&nbsp;&nbsp;<a href="/tag/writting.html" class="label"><i class="icon-tag"></i>&nbsp;Writting</a>
 </footer><!-- /.post-info -->        </div>
     </div>
     <div class="span6">
@@ -117,52 +117,97 @@
             <h1>
                 <a href=""
                         rel="bookmark"
-                        title="Permalink to secureCRT如何使用公共密钥登录">
-                        secureCRT如何使用公共密钥登录
+                        title="Permalink to Flow Chart">
+                        Flow Chart
                 </a>
             </h1>
         </header>
         <div class="entry-content">
 
-        <h4>secureCRT如何使用公共密钥登录</h4>
-<p>其实网上的文档很多。各有千秋。估计是自己明白了，别人看起来比较费劲。这里我整理一下，以备自己查阅：</p>
-<p>配置过程分为两大部分，SecureCRT部分和Linux服务器部分。</p>
-<p>SecureCRT部分配置</p>
-<p>1、首先生成公钥。</p>
-<p>打开SecureCRT（我的版本为7.0，估计其他版本基本相同）程序，点击菜单栏的“工具”---&gt;“创建公钥”。按照步骤执行。其中一步比较重要就是选择公钥的格式。建议选择“OpenSSH”,否则在服务器端使用时需要转换为OpenSSH各式。何必多次一举呢。所以这里必须选择“OpenSSH”。如果选错了。重新生成一次就可以了。</p>
-<p>然后选择公钥私钥存放的地方。默认Identity是私钥，Identity.pub是公钥。</p>
-<p>2、把Identity.pub文件上传到你要登陆的Linux服务器上。方法有很多，比如ssh（先不要配置为公钥登陆），ftp等。具体操作自己搞定。上传时选择ASCII方式。</p>
-<p>3、在SecureCRT创建服务器连接。协议使用ssh。在“鉴权”方法中，取消勾选“密码”。选择“公钥”，然后点击右边的属性按钮，在对话框中。</p>
-<p><img alt="ssh-nopwdlogin" src="https://raw.githubusercontent.com/stardj/MarkDownPhotos/master/ssh-nopwdlogin.png"></p>
-<p>使用全局公钥设置：表示所有连接都使用该公钥连接服务器。</p>
-<p>使用会话公钥设置：可以分别为每个连接指定不同的公钥。</p>
-<p>下面的路径就是指明私钥的具体路径。注意了，这里要指明私钥的路径。</p>
-<p>保存连接就可以了。</p>
-<p>Linux服务器端配置</p>
-<p>1、sshd_conf配置</p>
-<p>主要修改如下几个内容：</p>
-<p>PermitRootLogin no # 默认为注释，先配置为禁止root用户登陆，允许root登陆太危险了。好几次差点犯错误。切记切记！</p>
-<p>RSAAuthentication yes #默认为注释， 启用 RSA 认证</p>
-<p>AuthorizedKeysFile .ssh/authorized_keys # 验证公钥的存放路径</p>
-<p>PubkeyAuthentication yes # 默认为注释，启用公钥认证</p>
-<p>PasswordAuthentication no # 禁止密码认证，默认是打开的。</p>
-<p>保持后，重新启动ssh服务。在不同的linux服务器上，重启的方法不同。</p>
-<p>RedHat,CentOS: service sshd restart      //redhat 7 的方法已经改了。</p>
-<p>openbsd,freebsd: /etc/rc.d/sshd restart</p>
-<p>2、重点部分：配置公钥存放哪的问题。</p>
-<p>要把第一部分上传上来的公钥放到用户home目录的.ssh/ 目录下。这里说明一下。如果你想使用test账号登陆，就要把公钥放到test账户的.ssh目录下。你可以直接把Identity.pub改为authorized_keys. 当然也可还是用其他方法。</p>
-<p>比如：cat Identity.pub &gt;&gt; authorized_keys</p>
-<p>另外说明一下。.ssh目录权限是700，authorized_keys文件权限为644.</p>
-<p>重点补充，如果还有其他人也想用自己的公钥登陆服务器，该如何操作呢？ 正常操作应该为该用户在服务器上创建一个账号，重新执行本次（Linux服务器端配置，第2点）操作。当然，你也可以偷懒，把他的公钥也放到test账号的authorized_keys文件中。但两个公钥的内容之间使用换行符隔开。这样的方法还是不可取的。</p>
-<p>最后，使用SecureCRT登陆linux服务器。</p>
-<p>这里要注意，即使你使用公钥登陆服务器，当你连接的时候，还是要你输入用户名。为何呢？不是说公钥验证么？其实，服务器要知道用你的私钥和哪个用户的.ssh目录下的authorized_keys文件内容进行解密。不可能用你的私钥和所有的用户authorized_keys文件进行匹配测试。</p>
-<p>但是也有例外，如果你在linux系统上使用公钥登陆Linux服务器，就不需要指明用户。方法如下：</p>
-<p># ssh 172.16.24.222</p>
-<p>为何呢？这时系统默认以为你登陆的远程账号就是你当前登陆的账号。</p>
-<p>如果你设置了公钥口令，连接时比如输入。为了安全，这个口令是必须要有的。在SecureCRT中，口令被翻译为：通行短语。呵呵。</p>
-<p>补充一下，在linux系统上，如何创建公钥和私钥呢？</p>
-<p>方法很简单，执行ssh-keygen命令，按照提示就可以完成。完成后，自动会在当前用户的home目录，创建.ssh文件夹。</p>
-<p>服务器端配置和上面的方法相同。</p>
+        <h1>流程图</h1>
+<p>流程图题的审题步骤一般为：</p>
+<ol>
+<li>时态（一般现在时）</li>
+<li>语态（人类加工为被动语态，生命循环为主动语态）</li>
+<li>提炼每一步的动词（注意词性的转换）</li>
+<li>合理的时间顺序描述（顺序句式）</li>
+<li>综述（一共有几步，从哪里开始到哪里结束）</li>
+</ol>
+<p>How to describe different stages?顺序描述</p>
+<table>
+<thead>
+<tr>
+<th>矮穷矬版：连接词</th>
+<th>高大上版：复杂句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Firstly</td>
+<td>After</td>
+</tr>
+<tr>
+<td>Secondly</td>
+<td>Before</td>
+</tr>
+<tr>
+<td>Finally</td>
+<td>So that</td>
+</tr>
+<tr>
+<td>Next</td>
+<td>Until</td>
+</tr>
+<tr>
+<td>Afterwards</td>
+<td>When</td>
+</tr>
+<tr>
+<td>Then</td>
+<td>Where/Which</td>
+</tr>
+<tr>
+<td>Following this/that</td>
+<td>This/These</td>
+</tr>
+</tbody>
+</table>
+<p><strong>状语从句</strong></p>
+<ol>
+<li>
+<p>时间状语从句：</p>
+</li>
+<li>
+<p>At the first stage, they are cut, dried, and cooked.(连续动词简化), <em><strong>before/followed by</strong></em> being(注意语态) put in a machine.</p>
+</li>
+<li>
+<p><em><strong>After</strong></em> that, the cooked apples are processed in a factory.</p>
+</li>
+<li>
+<p>结果状语从句：</p>
+</li>
+<li>
+<p>Next, the processed apples are washed <em><strong>so that</strong></em> they are checked for quality.</p>
+</li>
+<li>
+<p>条件状语从句：</p>
+</li>
+<li>
+<p>The life cycle begins <em><strong>when</strong></em> the adult moth lay eggs.</p>
+</li>
+<li>The evaporating stage lasts for six hours <em><strong>until</strong></em> only coffee granules are left.</li>
+</ol>
+<p><strong>定语从句</strong></p>
+<ol>
+<li>地点为先行词的非限定性定语从句，补充解释“这里发生了什么”</li>
+<li>The are transported to a factory, <em><strong>where</strong></em> they are cut into pieces.</li>
+<li>Which引导的非限定性定语从句，补充说明</li>
+<li>The eggs grows to a larva, <em><strong>which</strong></em> is two centimeters long.</li>
+</ol>
+<p><strong>代词</strong></p>
+<p>The apples are cut into pieces, and <em><strong>these</strong></em> cut apples are cooked in a machine.</p>
+<p><strong>With短语</strong></p>
+<p>The coffee beans are cooked, with the oil being added in the vacuum.</p>
         </div><!-- /.entry-content -->
     </article>
 </section>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>secureCRT如何使用公共密钥登录 | Stardj is coding</title>
+    <title>Statistic writting | Stardj is coding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="" />
     <meta name="author" content="stardj" />
@@ -67,7 +67,7 @@
 						        <i class="icon-folder-open icon-large"></i>Algorithm
 					         </a>
                 </li>
-                <li >
+                <li class="active">
                   <a href="/category/ielts.html">
 						        <i class="icon-folder-open icon-large"></i>IELTS
 					         </a>
@@ -77,7 +77,7 @@
 						        <i class="icon-folder-open icon-large"></i>Machine Learning
 					         </a>
                 </li>
-                <li class="active">
+                <li >
                   <a href="/category/uncategorized.html">
 						        <i class="icon-folder-open icon-large"></i>Uncategorized
 					         </a>
@@ -100,14 +100,14 @@
     <div class="span2">
         <div class="well">
 <footer class="post-info">
-<abbr class="published" title="2015-12-20T16:35:00+08:00">
-    <i class="icon-calendar"></i>&nbsp;Sun 20 December 2015
+<abbr class="published" title="2016-04-10T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 10 April 2016
 </abbr>
 <br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
 
 
 <br/>
-	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+	&nbsp;&nbsp;<a href="/tag/writting.html" class="label"><i class="icon-tag"></i>&nbsp;Writting</a>
 </footer><!-- /.post-info -->        </div>
     </div>
     <div class="span6">
@@ -117,52 +117,35 @@
             <h1>
                 <a href=""
                         rel="bookmark"
-                        title="Permalink to secureCRT如何使用公共密钥登录">
-                        secureCRT如何使用公共密钥登录
+                        title="Permalink to Statistic writting">
+                        Statistic writting
                 </a>
             </h1>
         </header>
         <div class="entry-content">
 
-        <h4>secureCRT如何使用公共密钥登录</h4>
-<p>其实网上的文档很多。各有千秋。估计是自己明白了，别人看起来比较费劲。这里我整理一下，以备自己查阅：</p>
-<p>配置过程分为两大部分，SecureCRT部分和Linux服务器部分。</p>
-<p>SecureCRT部分配置</p>
-<p>1、首先生成公钥。</p>
-<p>打开SecureCRT（我的版本为7.0，估计其他版本基本相同）程序，点击菜单栏的“工具”---&gt;“创建公钥”。按照步骤执行。其中一步比较重要就是选择公钥的格式。建议选择“OpenSSH”,否则在服务器端使用时需要转换为OpenSSH各式。何必多次一举呢。所以这里必须选择“OpenSSH”。如果选错了。重新生成一次就可以了。</p>
-<p>然后选择公钥私钥存放的地方。默认Identity是私钥，Identity.pub是公钥。</p>
-<p>2、把Identity.pub文件上传到你要登陆的Linux服务器上。方法有很多，比如ssh（先不要配置为公钥登陆），ftp等。具体操作自己搞定。上传时选择ASCII方式。</p>
-<p>3、在SecureCRT创建服务器连接。协议使用ssh。在“鉴权”方法中，取消勾选“密码”。选择“公钥”，然后点击右边的属性按钮，在对话框中。</p>
-<p><img alt="ssh-nopwdlogin" src="https://raw.githubusercontent.com/stardj/MarkDownPhotos/master/ssh-nopwdlogin.png"></p>
-<p>使用全局公钥设置：表示所有连接都使用该公钥连接服务器。</p>
-<p>使用会话公钥设置：可以分别为每个连接指定不同的公钥。</p>
-<p>下面的路径就是指明私钥的具体路径。注意了，这里要指明私钥的路径。</p>
-<p>保存连接就可以了。</p>
-<p>Linux服务器端配置</p>
-<p>1、sshd_conf配置</p>
-<p>主要修改如下几个内容：</p>
-<p>PermitRootLogin no # 默认为注释，先配置为禁止root用户登陆，允许root登陆太危险了。好几次差点犯错误。切记切记！</p>
-<p>RSAAuthentication yes #默认为注释， 启用 RSA 认证</p>
-<p>AuthorizedKeysFile .ssh/authorized_keys # 验证公钥的存放路径</p>
-<p>PubkeyAuthentication yes # 默认为注释，启用公钥认证</p>
-<p>PasswordAuthentication no # 禁止密码认证，默认是打开的。</p>
-<p>保持后，重新启动ssh服务。在不同的linux服务器上，重启的方法不同。</p>
-<p>RedHat,CentOS: service sshd restart      //redhat 7 的方法已经改了。</p>
-<p>openbsd,freebsd: /etc/rc.d/sshd restart</p>
-<p>2、重点部分：配置公钥存放哪的问题。</p>
-<p>要把第一部分上传上来的公钥放到用户home目录的.ssh/ 目录下。这里说明一下。如果你想使用test账号登陆，就要把公钥放到test账户的.ssh目录下。你可以直接把Identity.pub改为authorized_keys. 当然也可还是用其他方法。</p>
-<p>比如：cat Identity.pub &gt;&gt; authorized_keys</p>
-<p>另外说明一下。.ssh目录权限是700，authorized_keys文件权限为644.</p>
-<p>重点补充，如果还有其他人也想用自己的公钥登陆服务器，该如何操作呢？ 正常操作应该为该用户在服务器上创建一个账号，重新执行本次（Linux服务器端配置，第2点）操作。当然，你也可以偷懒，把他的公钥也放到test账号的authorized_keys文件中。但两个公钥的内容之间使用换行符隔开。这样的方法还是不可取的。</p>
-<p>最后，使用SecureCRT登陆linux服务器。</p>
-<p>这里要注意，即使你使用公钥登陆服务器，当你连接的时候，还是要你输入用户名。为何呢？不是说公钥验证么？其实，服务器要知道用你的私钥和哪个用户的.ssh目录下的authorized_keys文件内容进行解密。不可能用你的私钥和所有的用户authorized_keys文件进行匹配测试。</p>
-<p>但是也有例外，如果你在linux系统上使用公钥登陆Linux服务器，就不需要指明用户。方法如下：</p>
-<p># ssh 172.16.24.222</p>
-<p>为何呢？这时系统默认以为你登陆的远程账号就是你当前登陆的账号。</p>
-<p>如果你设置了公钥口令，连接时比如输入。为了安全，这个口令是必须要有的。在SecureCRT中，口令被翻译为：通行短语。呵呵。</p>
-<p>补充一下，在linux系统上，如何创建公钥和私钥呢？</p>
-<p>方法很简单，执行ssh-keygen命令，按照提示就可以完成。完成后，自动会在当前用户的home目录，创建.ssh文件夹。</p>
-<p>服务器端配置和上面的方法相同。</p>
+        <h1>小作文</h1>
+<p>小作文一般分为两类：数据类和非数据类</p>
+<p>数据类一般分为：</p>
+<ul>
+<li>表格图</li>
+<li>柱状图</li>
+<li>折现图</li>
+<li>饼图</li>
+</ul>
+<p>其中折线图为动态对比图，其余的为静态对比图，其开头段的写法在<strong><em>讲义中有提到</em></strong> 。</p>
+<p>数据类的小作文审题步骤为：     </p>
+<ol>
+<li>确定时态（是过去时，是现在时，是将来时，还是混合时态）</li>
+<li>分类（按照一定的逻辑来对数据进行分类，方便写作分段也方便对比）</li>
+<li>对比（描写对比比较强力的数据）</li>
+<li>变化趋势（对变化趋势进行描写）</li>
+<li>总结（一般是对整体数据的一个综述，静态的就写最值，动态的就写总体变化趋势，然后找出一个显著的数据进行总结即可）</li>
+</ol>
+<p>在描写数据的时候，可以用数据做主语，也可用人做主语，也可用物做主语，这样可以体现句式的多样性。在进行对比的时候，可以用简单粗暴的排序，可以用最值比较，也可以用差值比较，这样同样也可以体现句式的多样性。具体的写作句式在<strong><em>讲义中有</em></strong>。</p>
+<p>用数据做主语常用词组和句式：the proportion of , the figure for , the percentage of </p>
+<p>常用的做比较的词组和句式：by contrast , in sharp contrast  to this  </p>
+<p>尽量避免写模板型的话（即没有什么内容，表达不了什么具体含义的语句），这样会给考官留下不好的印象、降低得分。</p>
         </div><!-- /.entry-content -->
     </article>
 </section>
