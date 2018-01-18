@@ -1,100 +1,343 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Brown Stone  
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20100928
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-        <title>Stardj is coding</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!--[if lte IE 8]><script src="/theme/js/ie/html5shiv.js"></script><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Stardj is coding - JAVA</title>
+<link href="/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/" type="application/atom+xml" rel="alternate" title="Stardj is coding ATOM Feed" />
 </head>
-
 <body>
-        <header id="banner" class="body">
-                <h1><a href="/">Stardj is coding <strong></strong></a></h1>
-        </header><!-- /#banner -->
-<!-- Sidebar -->
-            <div id="sidebar">
+<div id="wrapper">
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+ 
+        
+				<div id="content">
+					<div class="post">
+						<h2 class="title"><a href="/ba-da-pai-xu.html">八大排序</a></h2>
+						<p class="meta"><span class="date">Le  </span><span class="posted">Par <a href="#">stardj</a></span><span>&nbsp; | Catégorie : <a href="/category/java.html">JAVA</a></span></p>
+					<p class="meta">Tags : <span><a href="/tag/bei-wang-lu.html">备忘录</a> / </span>
+</p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+						 <h4>八大排序(Java实现)</h4>
+<ul>
+<li>冒泡排序</li>
+</ul>
+<p>算法描述：冒泡排序是一种交换排序，主要思想就是比较相邻元素，然后将较小的元素交换到前面，较大的元素交换到后面。</p>
+<p>时间复杂度：O(N^2)</p>
+<p>稳定性描述：由于交换是逐个进行的，且相等的元素不进行交换，所以冒泡法排序是一种稳定排序算法。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BubbleSort</span> <span class="o">{</span>
 
-                <!-- Logo -->
-                    <h1 id="logo"><a href="/">Stardj is coding</a></h1>
-                    <!-- Text -->
-                    <section class="box text-style1">
-                        <div class="inner">
-                            <p>
-                                <strong>Ut scelerisque nec sapien ut sollicitudin:</strong><br />
-                            </p>
-                        </div>
-                    </section>
-                <!-- Nav -->
-                    <nav id="nav">
-                        <ul>
-                            
-                            <li><a href="#">Nam euismod dui</a></li>
-                            <li><a href="#">Integer eget eros</a></li>
-                            <li><a href="#">Proin vehicula tortor</a></li>
-                            <li><a href="#">Vestibulum consectetur tellus</a></li>
-                        </ul>
-                    </nav>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">bubbleSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">){</span>
 
-                <!-- Search -->
-                    <!-- <section class="box search">
-                        <form method="post" action="#">
-                            <input type="text" class="text" name="search" placeholder="Search" />
-                        </form>
-                    </section> -->
-
-                
-
-                <!-- Recent Posts -->
-                    <section class="box recent-posts">
-                        <header>
-                            <h2>Contact Me</h2>
-                        </header>
-                        <ul>
-                            <li><a class="icon fa-envelope" href="#"> eMail</a></li>
-                            <li><a class="icon fa-twitter" href="#"> Twitter</a></li>
-                            <li><a class="icon fa-facebook" href="#"> Facebook</a></li>
-                            <li><a class="icon fa-github" href="#"> Github</a></li>
-                            
-                        </ul>
-                    </section>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span><span class="n">j</span><span class="o">++){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">]&gt;</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">]){</span>
+                    <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">]^=</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>
+                    <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">]^=</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+                    <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">]^=</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 
 
+<ul>
+<li>直接选择排序</li>
+</ul>
+<p>算法描述：直接选择排序是一种选择排序，主要思想是在给定序列中选择最小的元素，与序列中第1个元素进行交换，然后在余下的元素中选择总序列中第2小的，与序列中第2个元素进行交换，以此类推，不断选择出第i小的元素与总序列第i位元素交换，直到选到最后一个最大元素。</p>
+<p>时间复杂度：O(N^2)</p>
+<p>稳定性描述：这种选择的方法会导致稳定性的问题，例如：序列{4,4,2}，在第一次选择交换后序列变为{2,4,4}，原序列中第一个4就移动到了原序列中第二个4的后面，所以直接选择排序是一种不稳定排序算法。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SelectSort</span> <span class="o">{</span>
 
-                <!-- Copyright -->
-                    <ul id="copyright">
-                        <li>Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.</li>
-                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                        <li>Modified under a <a href="https://creativecommons.org/licenses/by/3.0/">CC:BY</a> license.</li>
-                    </ul>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">SelectSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">min</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">min</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+                    <span class="n">index</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="n">n</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">index</span><span class="o">];</span>
+            <span class="n">n</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 
-            </div><!-- /#menu -->
-<div id="content">
-<div class="inner">
-<!-- <h2>Articles in the JAVA category</h2>
- -->
 
-        <article class="box post post-excerpt">
-                <header> 
-                <h2><a href="/ba-da-pai-xu.html" rel="bookmark" title="Permalink to 八大排序">八大排序</a></h2> 
-                <p></p>
-                </header>
-                <div class="info">
-                    <span class="date" datetime="2015-11-10T15:35:00+01:00"><span class="month">Nov</span> <span class="day">10</span> <span class="month"> 2015</span></span>
-                    <!-- <ul class="stats">
-                                    <li><a href="#" class="icon fa-comment">16</a></li>
-                                    <li><a href="#" class="icon fa-heart">32</a></li>
-                                    <li><a href="#" class="icon fa-twitter">64</a></li>
-                                    <li><a href="#" class="icon fa-facebook">128</a></li>
-                                </ul> -->
-                </div><!-- /.post-info -->
-                <div class="entry-content"> &nbsp; </div><!-- /.entry-content -->
-        </article>
-<!-- /#posts-list -->
+<ul>
+<li>直接插入排序</li>
+</ul>
+<p>算法描述：直接插入排序是一种插入排序，主要思想是在一个已经有序的小序列的基础上，一次插入一个元素。当然，刚开始这个有序的小序列只有1个元素，就是第一个元素。比较是从有序序列的末尾开始，也就是想要插入的元素和已经有序的最大者开始比起，如果不比它小则直接插入在其后面，否则一直往前找直到找到它该插入的位置。</p>
+<p>时间复杂度：O(N^2) </p>
+<p>稳定性描述：如果碰见一个和插入元素相等的，那么插入元素把想插入的元素放在相等元素的后面。所以，相等元素的前后顺序没有改变，从原无序序列出去的顺序就是排好序后的顺序，所以直接插入排序是一种稳定的排序算法。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InsertSort</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">insertSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">j</span><span class="o">,</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span> <span class="c1">//找到要插入的位置，记做index</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">n</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">])</span> <span class="o">{</span>
+                    <span class="n">index</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">index</span><span class="o">;</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span> <span class="c1">//插入并移动元素</span>
+                <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">^=</span> <span class="n">n</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+                <span class="n">n</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">^=</span> <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+                <span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">^=</span> <span class="n">n</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<ul>
+<li>
+<p>希尔排序</p>
+</li>
+<li>
+<p>快速排序</p>
+</li>
+</ul>
+<p>算法描述：快速排序是一种交换排序，可以看做是冒泡排序的升级版。快速排序会选择一个标兵（一般选择当前子序列的第一个元素或者最后一个元素），然后将小于标兵的元素放置在标兵左边、大于标兵的元素放置在标兵的右边，这样就生成了另外两个子序列，然后进行同样地操作至子序列不可分为止。</p>
+<p>时间复杂度为：O(N*log(N))</p>
+<p>稳定性描述：因为快速排序在进行交换时会将前面已经经过交换的元素进行打乱，<strong>所以这是一个不稳定排序算法</strong>。</p>
+<p>代码实现：</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QickSort</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">IQickSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">left</span><span class="o">,</span> <span class="kt">int</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">dp</span><span class="o">;</span><span class="c1">//标兵在全序列的位置，即子序列分割点</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">dp</span> <span class="o">=</span> <span class="n">partition</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">);</span>
+            <span class="n">IQickSort</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">dp</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span><span class="c1">//左边子序列递归快排</span>
+            <span class="n">IQickSort</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">dp</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">right</span><span class="o">);</span><span class="c1">//右边子序列递归快排</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">partition</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">left</span><span class="o">,</span> <span class="kt">int</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">left</span><span class="o">];</span><span class="c1">//标兵</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">pivot</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">right</span><span class="o">--;</span>
+            <span class="o">}</span><span class="c1">//找出标兵右边比标兵小的元素</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span>
+                <span class="n">n</span><span class="o">[</span><span class="n">left</span><span class="o">++]</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">right</span><span class="o">];</span><span class="c1">//交换</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">&lt;=</span> <span class="n">pivot</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">left</span><span class="o">++;</span>
+            <span class="o">}</span><span class="c1">//找出标兵左边比标兵大的元素</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span>
+                <span class="n">n</span><span class="o">[</span><span class="n">right</span><span class="o">--]</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">left</span><span class="o">];</span><span class="c1">//交换</span>
+        <span class="o">}</span>
+        <span class="n">n</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">left</span><span class="o">;</span><span class="c1">//返回标兵最终的位置</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+
+
+<ul>
+<li>堆排序</li>
+</ul>
+<p>算法描述：堆排序是一种选择排序，可以看做是直接选择排序的升级版，堆排序是以大顶堆（小顶堆也能实现，这里以大顶堆来进行说明）的性质保持为基础进行选择排序，堆的节点是节点i的孩子（即节点2*i和2*i+1），大顶堆要求父节点大于或等于两个节点。为了维持这个性质，对于一个以i为根的子树A，从元素A[i],A[left(i)],A[right(i)]中选出最大值，如果最大值是根节点则结束，如果是左(右)节点则与根节点进行交换，并对左(右)子树继续进行选择交换，对一个序列构造大顶堆时从第n/2个元素向前进行性质维持就能构造出一个大顶堆。堆排序的思想是选出当前大顶堆的根节点，将其与最后的节点元素进行交换，再移除最后的节点，然后维持大顶堆的性质进行选择交换，直到所有元素移除即完成排序工作。</p>
+<p>时间复杂度为：O(N*Log(N))</p>
+<p>稳定性描述：堆排序的过程是从第n/2开始和其子节点共3个值选择大顶堆，这3个元素之间的选择当然不会破坏稳定性。但当为(n/2)-1，(n/2)-2 ... 这些个父节点选择元素时，就会破坏稳定性。有可能第n/2个父节点交换把后面一个元素交换过去了，而第(n/2)-1个父节点把后面一个相同的元素没有交换，那么这2个相同的元素之间的稳定性就被破坏了。<strong>所以，堆排序不是稳定的排序算法</strong>。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HeapSort</span> <span class="o">{</span>
+
+    <span class="cm">/*交换两个数值*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">n</span><span class="o">[</span><span class="n">index1</span><span class="o">]</span> <span class="o">^=</span> <span class="n">n</span><span class="o">[</span><span class="n">index2</span><span class="o">];</span>
+        <span class="n">n</span><span class="o">[</span><span class="n">index2</span><span class="o">]</span> <span class="o">^=</span> <span class="n">n</span><span class="o">[</span><span class="n">index1</span><span class="o">];</span>
+        <span class="n">n</span><span class="o">[</span><span class="n">index1</span><span class="o">]</span> <span class="o">^=</span> <span class="n">n</span><span class="o">[</span><span class="n">index2</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">IHeapSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">buildMaxHeapify</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+            <span class="n">swap</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+            <span class="n">maxHeapify</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/*建立大顶堆*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">buildMaxHeapify</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//从第一个非叶子节点开始大顶堆化</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+            <span class="n">maxHeapify</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/*将树中数值最大的节点交换到根节点*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">maxHeapify</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">heapSize</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span><span class="c1">//左叶子节点</span>
+        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">2</span><span class="o">;</span><span class="c1">//右叶子节点</span>
+        <span class="kt">int</span> <span class="n">largest</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">heapSize</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">n</span><span class="o">[</span><span class="n">largest</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">largest</span> <span class="o">=</span> <span class="n">left</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">right</span> <span class="o">&lt;</span> <span class="n">heapSize</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">n</span><span class="o">[</span><span class="n">largest</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">largest</span> <span class="o">=</span> <span class="n">right</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">largest</span> <span class="o">!=</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">swap</span><span class="o">(</span><span class="n">n</span><span class="o">,</span><span class="n">i</span><span class="o">,</span><span class="n">largest</span><span class="o">);</span>
+            <span class="n">maxHeapify</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">largest</span><span class="o">,</span> <span class="n">heapSize</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+
+
+<ul>
+<li>归并排序</li>
+</ul>
+<p>算法描述：归并排序是把序列递归地分成短序列，递归出口是短序列只有1个元素（认为直接有序）或者2个序列（1次比较和交换），然后把各个有序的段序列合并成一个有序的长序列，合并时采用相互比较两边序列最小值先放入合并序列的方法，然后按顺序不断比较放入合并序列。不断合并直到原序列全部排好序。</p>
+<p>时间复杂度：O(N*Log(N))</p>
+<p>稳定性描述：可以发现，在1个或2个元素时，1个元素不会交换，2个元素如果大小相等也没有人故意交换，这不会破坏稳定性。那么，在短的有序序列合并的过程中，稳定是是否受到破坏？没有，合并过程中我们可以保证如果两个当前元素相等时，我们把处在前面的序列的元素保存在结果序列的前面，这样就保证了稳定性。<strong>所以，归并排序是稳定的排序算法</strong>。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MergeSort</span> <span class="o">{</span>
+
+    <span class="cm">/*用递归的方法将数组拆分*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mergeSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">left</span><span class="o">,</span> <span class="kt">int</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mergeSort</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">mid</span><span class="o">);</span>
+            <span class="n">mergeSort</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">right</span><span class="o">);</span>
+            <span class="n">merge</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">,</span> <span class="n">mid</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/*归并的具体实现*/</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">merge</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">left</span><span class="o">,</span> <span class="kt">int</span> <span class="n">right</span><span class="o">,</span> <span class="kt">int</span> <span class="n">mid</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">indexL</span> <span class="o">=</span> <span class="n">left</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">indexR</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="c1">//将较小的元素插入到temp数组中</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">indexL</span> <span class="o">&lt;=</span> <span class="n">mid</span> <span class="o">&amp;&amp;</span> <span class="n">indexR</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">n</span><span class="o">[</span><span class="n">indexL</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">[</span><span class="n">indexR</span><span class="o">])</span> <span class="o">{</span>
+                <span class="n">temp</span><span class="o">[</span><span class="n">index</span><span class="o">++]</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">indexL</span><span class="o">++];</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">temp</span><span class="o">[</span><span class="n">index</span><span class="o">++]</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">indexR</span><span class="o">++];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="c1">//将还没有插入的元素插入到temp数组中</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">indexL</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="o">)</span>
+            <span class="n">temp</span><span class="o">[</span><span class="n">index</span><span class="o">++]</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">indexL</span><span class="o">++];</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">indexR</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">)</span>
+            <span class="n">temp</span><span class="o">[</span><span class="n">index</span><span class="o">++]</span> <span class="o">=</span> <span class="n">n</span><span class="o">[</span><span class="n">indexR</span><span class="o">++];</span>
+
+        <span class="c1">//将归并后的数组覆盖到原数组中</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">temp</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">n</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">left</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<ul>
+<li>基数排序</li>
+</ul>	
+						</div>
+					</div>
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<div id="sidebar">
+					<div id="logo">
+						<h1><a href="">Stardj is coding</a></h1>
+					</div>
+					<div id="menu">
+						<ul>
+							<li ><a href="">Home</a></li>
+							<li ><a href="/archives.html">Archives</a></li>
+						</ul>
+					</div>
+					<ul>
+						<li>
+							<h2>Catégories</h2>
+							<ul>
+								 <li class="active"><a href="/category/java.html">JAVA</a></li>
+								 <li ><a href="/category/machine-learning.html">Machine Learning</a></li>
+								 <li ><a href="/category/uncategorized.html">Uncategorized</a></li>
+								 <li ><a href="/category/ya-si.html">雅思</a></li>
+							</ul>
+						</li>
+						<li>
+							<h2>Blogroll</h2>
+							<ul>
+                                                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                                                            <li><a href="http://python.org/">Python.org</a></li>
+                                                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                                                            <li><a href="#">You can modify those links in your config file</a></li>
+							</ul>
+						</li>
+                                                <li>
+                                                        <h2>Social</h2>
+                                                        <ul>
+                                                            <li><a href="/" rel="alternate">Flux Atom</a></li>
+                                                            <li><a href="#">You can add links in your config file</a></li>
+                                                            <li><a href="#">Another social link</a></li>
+                                                        </ul>
+                                                </li><!-- /.social -->
+						<li>
+						        <h2>Tags</h2>
+						        <ul>
+                                                                <li><a href="/tag/learning-note.html">Learning note</a></li>
+                                                                <li><a href="/tag/bei-wang-lu.html">备忘录</a></li>
+                                                                <li><a href="/tag/github-pages.html">Github-Pages</a></li>
+                                                                <li><a href="/tag/blogs.html">Blogs</a></li>
+                                                                <li><a href="/tag/pelican.html">Pelican</a></li>
+                                                                <li><a href="/tag/markdown.html">Markdown</a></li>
+						        </ul>
+						</li>
+						
+						
+					</ul>
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+
+<div id="footer">
+	<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">CSS Templates</a>.</p>
+	<p>Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
+</p>
 </div>
-</div><!-- /#content -->
-<!-- /#contentinfo -->
+<!-- end #footer -->
 </body>
 </html>
