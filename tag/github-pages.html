@@ -1,210 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-        <title>Stardj is coding - Github-Pages</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
-        <link href="/" type="application/atom+xml" rel="alternate" title="Stardj is coding ATOM Feed" />
+    <title> Stardj is coding </title>
+    <link rel="shortcut icon" href="/images/" />
 
+    <script src="/theme/js/jquery-3.1.1.min.js"></script>
 
-        <!--[if IE]>
-                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!-- extra css -->
 
-        <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie.css"/>
-                <script src="/js/IE8.js" type="text/javascript"></script><![endif]-->
+    <!-- uikit basic -->
+    <link rel="stylesheet" href="/theme/css/uikit.min.css"/>
+    <script src="/theme/js/uikit.min.js"></script>
 
-        <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie6.css"/><![endif]-->
+    <!-- uk components -->
+    <link rel="stylesheet" href="/theme/css/components/sticky.css"/>
+    <script src="/theme/js/components/sticky.js"></script>
+    <link rel="stylesheet" href="/theme/css/components/search.css"/>
+    <script src="/theme/js/components/search.js"></script>
+
+    <!-- self defined  -->
+    <link rel="stylesheet" href="/theme/css/highlight.css"/>
+    <link rel="stylesheet" href="/theme/css/main.css"/>
 
 </head>
+<body>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/index.html">Stardj is coding </a></h1>
-                <nav><ul>
-                <li><a href="/">Archives</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+    <main class="jojo-theme">
+        <div class="uk-container uk-container-center">
 
-     <section id="content" class="body">
-        <aside id="featured"><article>
-                <h1 class="entry-title"><a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">如何利用Github-Pages建立个人博客</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2015-11-21T11:38:00+08:00">
-                Sat 21 November 2015
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/stardj.html">stardj</a>
-        </address>
-<p>In <a href="/category/uncategorized.html">Uncategorized</a>. </p>
-<p>tags: <a href="/tag/github-pages.html">Github-Pages</a><a href="/tag/blogs.html">Blogs</a></p></p></footer><!-- /.post-info --><!-- /.post-info -->
-                <p><strong>知识储备</strong></p>
-<blockquote>
-<p><a href="https://github.com/">github</a></p>
-<p><a href="https://pages.github.com/">github pages</a></p>
-<p><a href="http://git-scm.com/">git</a></p>
-<p><a href="http://www.python.org/">python</a></p>
-<p><a href="https://pypi.python.org/pypi">pip</a></p>
-<p><a href="http://blog.getpelican.com/">pelican</a></p>
-<p><a href="http://daringfireball.net/projects/markdown/syntax">markdown</a></p>
-<p><a href="http://markdownpad.com/">markdownpad</a></p>
-</blockquote>
-<p><strong>下载安装</strong></p>
-<blockquote>
-<p><a href="http://www.python.org/getit/">python3下载</a></p>
-<p><a href="http://msysgit.github.io/">git下载</a></p>
-<p><a href="https://pypi.python.org/pypi/distribute#downloads">pip下载</a></p>
-</blockquote>
-<h3>如何利用Github-Pages建立个人博客</h3>
-<h3><strong>前言</strong></h3>
-<p>Github作为现在最流行的代码厂库，在程序员中已经是家喻户晓的了。它和好的将代码和社区结合到了一起，一下主要就是将它的社区功能之一——Github-Pages。</p>
-<p>Github-Pages有一下几个优点：</p>
-<ul>
-<li>轻量级的博客，没有麻烦的配置问题</li>
-<li>使用标记语言，比如Markdown，无需自己搭建服务器</li>
-<li>根据Github的限制，对应的每个站有300MB的空间</li>
-<li>可以绑定自己的域名</li>
-</ul>
-<p>当然它也有缺点：</p>
-<ul>
-<li>基于Git，很多东西需要自己动手，不像Wordpress那样有自己强大的后台</li>
-<li>动态程序部分相当局限，比如没有评论功能等，不过我们有解决方案</li>
-</ul>
-<p>总的来说，作为个人博客，Git-Pages应该就是最完美的解决方案之一了。</p>
-<h3>配置和使用Github-Pages</h3>
-<p>Git是版本管理的未来，他的优点数不胜数，网上有很多资料，教程的话推荐这个<a href="http://git-scm.com/book/zh/v2">Git中文教程</a>，有关Git的安装、配置和使用上面都有描述，我就不重复了。</p>
-<p><a href="https://pages.github.com/">Github-Pages官网</a>上有使用教程，简单地来说就是创建一个名字为username.github.io的仓库，然后在仓库里面写博客即可。</p>
-<h3>使用Pelican建立静态博客</h3>
-<p><code>Pelican</code>是一套开源的使用Python编写的博客静态生成, 可以添加文章和和创建页面, 可以使用<code>MarkDown</code> <code>reStructuredText</code> 和 <code>AsiiDoc</code> 的格式来抒写, 同时使用 <code>Disqus</code>评论系统, 支持 <code>RSS</code>和<code>Atom</code>输出, 插件, 主题, 代码高亮等功能, 采用<code>Jajin2</code>模板引擎, 可以很容易的更改模板</p>
-<p>打开git bash，进入一个自己喜欢的文件夹（注意文件夹名最好不为空，因为后续make html命令会出错），执行以下命令</p>
-<div class="highlight"><pre><span></span>mkdir blog //创建文件夹，名称可根据自己喜欢定
-<span class="nb">cd</span> blog
-pelican-quickstart
-</pre></div>
+            <!-- nav -->
 
 
-<p>pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在<code>pelicanconf.py</code>文件中进行更改，所以你可以随意选择，如下图~</p>
-<p><img alt="pelican1" src="https://raw.githubusercontent.com/stardj/MarkDownPhotos/master/pelican1.png"></p>
-<p>命令成功执行后，会出现pelican的框架，如下所示</p>
-<div class="highlight"><pre><span></span>blog/
-├── content                <span class="c1"># 存放输入的markdown或RST源文件</span>
-│   └── <span class="o">(</span>pages<span class="o">)</span>            <span class="c1"># 存放手工创建的静态页面，可选</span>
-├── output                 <span class="c1"># 存放最终生成的静态博客</span>
-├── develop_server.sh      <span class="c1"># 测试服务器</span>
-├── Makefile               <span class="c1"># 管理博客的Makefile</span>
-├── pelicanconf.py         <span class="c1"># 配置文件</span>
-└── publishconf.py         <span class="c1"># 发布文件，可删除</span>
-</pre></div>
+            <div class="uk-grid uk-margin-large-top">
+                <div class="uk-width-medium-1-10">
 
 
-<p><strong>书写博文</strong></p>
-<p>完成上述博客主体搭建后，使用markdownpad创建一个<code>.md</code>文件，保存于<code>content</code>文件夹中。博文格式如下所示：</p>
-<!— 插入图片 —>
 
-<p>图中左侧是我们书写的markdown格式的源文件，右边则是即使预览效果，很棒吧~ 至于源文件顶部<code>Title,Date,Category等</code>内容则是必须的，具体可参见<a href="http://docs.getpelican.com/en/3.3.0/getting_started.html#writing-content-using-pelican">文档</a>，它们各自意义如下</p>
-<div class="highlight"><pre><span></span>Title: 文章标题
-Date: 创建日期
-Modified: 修改日期
-Category: 文章分类，标志本文处于该分类下
-Tags: 文章标签，标志本文处于该标签下
-Slug: URL中该文章的链接地址
-Author: 作者
-</pre></div>
-
-
-<p>写完后，回到<code>blog</code>目录下，执行<code>make html</code>命令进行博客的生成:</p>
-<div class="highlight"><pre><span></span>make html
-<span class="o">(</span>pelican e:/blog/content/ -o e:/blog/output -s e:/blog/pelicanconfg.py<span class="o">)</span>
-</pre></div>
-
-
-<p><code>make html</code>命令将把刚才写的博文生成html，存放到output目录下，如果你没有make命令，也可执行第二行的pelican命令。接着执行<code>make serve</code>开启测试服务器</p>
-<p><code>make serve</code>命令也可由第二行替代，在浏览器中输入<code>http://localhost:8000</code>即可看到博文效果。</p>
-<h3>主题选择</h3>
-<p>回到<code>blog</code>目录下，按如下步骤下载pelican官方主题，从里面挑选出自己喜欢的主题吧，大多数主题预览界面你可以打开这个<a href="http://pelicanthemes.com/">网页</a>进行查看。不过如今pelican又新出了很多主题，所以你需看看<a href="https://github.com/getpelican/pelican-themes">pelican主题开源库</a>。</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/getpelican/pelican-themes.git
-</pre></div>
-
-
-<p>打开<code>pelicanconf.py</code>配置文件，更改或添加<code>THEME</code>为自己喜欢的主题，例如本博客所挑选的gum，更多的配置含义请关注<a href="http://docs.getpelican.com/en/3.3.0/settings.html">官方文档</a>。</p>
-<div class="highlight"><pre><span></span>THEME = &#39;pelican-themes/gum&#39;
-</pre></div>
-
-
-<h3>添加评论系统</h3>
-<p>开启个人博客的原因在于分享知识，分享就需要交流，评论模块当然少不了。在<a href="https://disqus.com/">Disqus</a>上申请帐号，按照流程Disqus会分配给你站点的Shortname，记牢Shortname，如果忘了请进入admin/settings中查看。然后同理，在<code>pelicanconf.py</code>添加</p>
-<div class="highlight"><pre><span></span>DISQUS_SITENAME = Shortname
-</pre></div>
-
-
-<h3>博文发布</h3>
-<p>经过以上的折腾，离成功只差最后一步呢。写好的博文总要找个站点发布吧，本文基于github pages，当然你也可以选择你熟悉的站点服务器。具体步骤如<a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">官方教程</a>，非常简单。按照官方教程，你就拥有一个二级域名和一个版本库，比如我的<a href="http://stardj.github.com/">http://stardj.github.com/</a>，当然现在访问会出现跳转，这在后面独立域名章节会介绍。</p>
-<p>进入上一章节所示的<code>output</code>目录下，依次执行以下命令</p>
-<div class="highlight"><pre><span></span>git init
-git add .
-git remote add origin https://github.com/stardj/stardj.github.io
-git pull origin master
-git commit -m &#39;first blog&#39;
-git push origin master
-</pre></div>
-
-
-<p>熟悉git的同学肯定知道上述命令表达的是什么意思吧，如果你还不甚了解，没关系，先照做或者看看git的<a href="http://www.git-scm.com/book/zh">官方文档</a>。上述命令很长，如果你比较熟悉了，可以修改Makefile文件进行一键上传~</p>
-<p>最后打开浏览器输入github pages的二级域名，效果如下</p>
-<!—插入图片—>
-
-<p>目前为止，还算比较成功。从上图可以看出，书写源文件的<code>Title,Date,Category,Slug等</code>内容每个都有其的用武之处，具体你可以慢慢了解。</p>
-<h3>TODO</h3>
-<p>目前来说，博客的基本使用已经可以了，不过我们依然可以对其进行完善。接下来的一篇文章我会介绍以下几个方面</p>
-<ol>
-<li>独立域名</li>
-<li>博文URL格式配置，例<a href="http://www.xycoding.com/pages/2013/11/21/create-blog/">http://www.xycoding.com/pages/2013/11/21/create-blog/</a></li>
-<li>pelican插件的使用（Sitemap等）</li>
-<li>Google Analytics和Google Webmasters</li>
-</ol>
-        </article></aside><!-- /#featured -->
-</ol><!-- /#posts-list -->
-</section><!-- /#content -->
-
-        <aside id="sidebar">
-                <div class="widget">
-                        <h2>Categories</h2>
-                        <ul>
-                           <li ><a href="/category/algorithm.html">Algorithm</a></li>
-                           <li ><a href="/category/machine-learning.html">Machine Learning</a></li>
-                           <li ><a href="/category/uncategorized.html">Uncategorized</a></li>
-                           <li ><a href="/category/ya-si.html">雅思</a></li>
-                        </ul>
                 </div>
-                <div class="widget blogroll">
-                        <h2>Blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="widget social">
-                        <h2>Social</h2>
-                        <ul>
-                            <li><a href="/None" rel="alternate">atom feed</a></li>
+                <div class="uk-width-medium-7-10">
+                    <div class="uk-margin-top">
+                        <!-- content -->
+    <article class="uk-article">
+            <div class="uk-grid">
+                <div class="uk-width-medium-2-10">
+                        <div class="tags">
+                                <div>
+                                    <i class="uk-icon-tag"></i>
+                                    <div class="uk-badge uk-badge-notification">
+                                        <a href="/tag/github-pages.html">Github-Pages</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="uk-icon-tag"></i>
+                                    <div class="uk-badge uk-badge-notification">
+                                        <a href="/tag/blogs.html">Blogs</a>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="uk-width-medium-8-10">
+                    <h2>
+                        <a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html" rel="bookmark"> 如何利用Github-Pages建立个人博客 </a>
+                    </h2>
+                    <p class="uk-article-meta">
+                        Sat 21 November 2015
+                    </p>
+                    <p>How to make personal blogs with Github-Pages.</p>
+                    <!--<p> 知识储备 github github pages git python pip pelican markdown markdownpad 下载安装 python3下载 git下载 pip下载 如何利用Github-Pages建立个人博客 前言 Github作为现在最流行的代码厂库，在程序员中已经是家喻户晓的了。它和好的将代码和社区结合到了一起，一下主要就是将它的社区功能之一——Github-Pages。 Github-Pages有一下几个优点： 轻量级的博客，没有麻烦的配置问题 使用标记语言，比如Markdown，无需自己搭建服务器 根据Github的限制，对应的每个站有300MB的空间 可以绑定自己的域名 当然它也有缺点： 基于Git，很多东西需要自己动手，不像Wordpress那样有自己强大的后台 动态程序部分相当局限，比如没有评论功能等，不过我们有解决方案 总的来说，作为个人博客，Git-Pages应该就是最完美的解决方案之一了。 配置和使用Github-Pages Git是版本管理的未来，他的优点数不胜数，网上有很多资料，教程的话推荐这个Git中文教程，有关Git的安装、配置和使用上面都有描述，我就不重复了。 Github-Pages官网上有使用教程，简单地来说就是创建一个名字为username.github.io的仓库，然后在仓库里面写博客即可。 使用Pelican建立静态博客 Pelican是一套开源的使用Python编写的博客静态生成, 可以添加文章和和创建页面, 可以使用MarkDown reStructuredText 和 AsiiDoc 的格式来抒写, 同时使用 Disqus评论系统, 支持 RSS和Atom输出, 插件, 主题, 代码高亮等功能, 采用Jajin2模板引擎, 可以很容易的更改模板 打开git bash，进入一个自己喜欢的文件夹（注意文件夹名最好不为空，因为后续make html命令会出错），执行以下命令 mkdir blog //创建文件夹，名称可根据自己喜欢定 cd blog pelican-quickstart pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择，如下图~ 命令成功执行后，会出现pelican的框架，如下所示 blog/ ├── content...</p>-->
+                    <p class="uk-text-right jojo-read-more"><a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">Read More...</a></p>
+                </div>
+            </div>
+            <hr class="uk-article-divider">
+    </article>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </aside><!-- /#sidebar -->
+                    </div>
+                </div>
+                <div class="uk-width-medium-2-10">
 
-        <footer id="footer" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
-                </address><!-- /#about -->
+                    <!-- author info -->
 
-                <p>The theme is «notmyidea-cms», a modified version of «notmyidea», the default theme.</p>
-        </footer><!-- /#footer -->
+                    <!-- newest articles -->
+
+
+                    <!-- related links -->
+
+                </div>
+            </div>
+
+            <!-- footer -->
+
+        </div>
+    </main>
+
 
 </body>
 </html>
