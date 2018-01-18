@@ -1,71 +1,255 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Stardj Is Coding - Learning note</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-            <link rel="stylesheet" href="/theme/css/normalize.css">
-        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/theme/css/main.css">
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Stardj is coding - Learning note</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
 
-    <link rel="stylesheet" href="/theme/css/blog.css">
-    <link rel="stylesheet" href="/theme/css/github.css">
-        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+</head>
 
-        <div id="wrapper">
-<header id="sidebar" class="side-shadow">
-    <hgroup id="site-header">
-        <a id="site-title" href=""><h1><i class="icon-coffee"></i> Stardj Is Coding</h1></a>
-        <p id="site-desc"></p>
-    </hgroup>
-    <nav>
-        <ul id="nav-links">
-        </ul>
-    </nav>
-<footer id="site-info">
-    <p>
-        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
-    </p>
-    <p>
-        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
-    </p>
-</footer></header>
-    <div id="post-container">
-        <ol id="post-list">
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2017-10-01T15:35:00+02:00" pubdate>
-                            Sun 01 October 2017
-                        </time>
-                        <a href="/probability-and-other-preliminaries.html" rel="bookmark"><h1>Probability and Other Preliminaries</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Mathematica</p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-        </ol>
-        <div class="paginator">
-            Page 1 / 1
-        </div>
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Stardj is coding </a></h1>
+                <nav><ul>
+                    <li><a href="/category/java.html">JAVA</a></li>
+                    <li><a href="/category/machine-learning.html">Machine Learning</a></li>
+                    <li><a href="/category/uncategorized.html">Uncategorized</a></li>
+                    <li><a href="/category/ya-si.html">雅思</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
 
-    </div>
-        </div>
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/probability-and-other-preliminaries.html">Probability and Other Preliminaries</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-10-01T15:35:00+02:00">
+                Published: Sun 01 October 2017
+        </abbr>
 
-        <script src="/theme/js/main.js"></script>
-    </body>
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/stardj.html">stardj</a>
+        </address>
+<p>In <a href="/category/machine-learning.html">Machine Learning</a>.</p>
+<p>tags: <a href="/tag/learning-note.html">Learning note</a> </p>
+</footer><!-- /.post-info --><h1>Probability and Other Preliminaries</h1>
+<ul>
+<li>probability distribution</li>
+<li>rules of probability</li>
+<li>review for linear algebra</li>
+</ul>
+<h3>Preview</h3>
+<ul>
+<li>topics this week mainly concerns a brief review for probability and linear algebra</li>
+<li>lab class introduces use of Jupyter, Python and Pandas</li>
+</ul>
+<h3>Probability Distribution</h3>
+<p>The <strong>probability distribution function</strong> of a random variable $X$ is
+$$
+  F(x) = P(X \leq x)
+$$
+where the notation ${X \leq x}$ consists of all outcomes smaller than or equal to $x$.</p>
+<p>The derivative
+$$
+  p(x) = \frac{dF(x)}{dx}
+$$
+is called the <strong>probability density function</strong> of $X$ .</p>
+<p>Wikipedia:
+<a href="https://en.wikipedia.org/wiki/Probability_distribution">Probability distribution</a> /
+<a href="https://en.wikipedia.org/wiki/Probability_density_function">Probability density function</a></p>
+<h3>Joint Distribution</h3>
+<p>The <strong>joint distribution function</strong> of two random variables $X$ and $Y$ is the probability of the joint statistics ${X \leq x, Y \leq y}$, ie,
+$$
+  F(x, y) = P(X \leq x, Y \leq y)
+$$</p>
+<p>The derivative
+$$
+  p(x, y) = \frac{\partial^2 F(x, y)}{\partial x \partial y}
+$$
+is called the <strong>joint density function</strong> of $X$ and $Y$ .</p>
+<ul>
+<li>$X$ and $Y$ are <strong>independent</strong> if and only if $p(x,y) = p(x)p(y)$</li>
+</ul>
+<p>Wikipedia: <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution">Joint probability distribution</a></p>
+<h3>Conditional Distribution</h3>
+<p>Given two jointly distributed random variables $X$ and $Y$, the <strong>conditional probability distribution</strong> of $Y$ given $X$ is the probability distribution of $Y$ when $X$ is known to be a particular value.</p>
+<p>The <strong>conditional density function</strong> of $y$ given the occurrence of the value $x$ is
+$$
+  p(y|x) = \frac{p(x,y)}{p(x)}
+$$</p>
+<p>Wikipedia: <a href="https://en.wikipedia.org/wiki/Conditional_probability_distribution">Conditional probability distribution</a></p>
+<h3>Gaussian (Normal) Distribution</h3>
+<p>The probability density of the <strong>Gaussian distribution</strong> is
+$$
+  p(x\ |\ \mu,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+$$
+where $\mu$ is the <strong>mean</strong> and $\sigma^2$ is the <strong>variance</strong> of the distribution.</p>
+<ul>
+<li>very common in natural and social sciences</li>
+<li>$\sigma$ is the <strong>standard deviation</strong></li>
+</ul>
+<p>Wikipedia: <a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal distribution</a></p>
+<h3>The Normal (Gaussian) Distribution</h3>
+<div align="right">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Gaussian_distribution.svg/640px-Gaussian_distribution.svg.png", width=700>
+</div>
+
+<ul>
+<li>about 68% of values drawn from a Gaussian distribution are within one standard deviation $\sigma$ from the mean $\mu$</li>
+</ul>
+<h3>Multivariate Gaussian (Normal) Distribution</h3>
+<p>The probability density of the $k$-dimensional <strong>Gaussian distribution</strong> is
+$$
+  p(\mathbf{x}\ |\ \boldsymbol{\mu},\boldsymbol{\Sigma}) = \frac{1}{\sqrt{2\pi^k |\boldsymbol{\Sigma}|}} \exp\left( -\frac{1}{2} (\mathbf{x}-\boldsymbol{\mu})^\top \boldsymbol{\Sigma}^{-1} (\mathbf{x}-\boldsymbol{\mu}) \right)
+$$
+where $\boldsymbol{\mu}$ is the $k\times 1$ <strong>mean vector</strong> and $\boldsymbol{\Sigma}$ is the $k\times k$ <strong>covariance matrix</strong>.</p>
+<ul>
+<li>$|\boldsymbol{\Sigma}|$ and $\boldsymbol{\Sigma}^{-1}$ are the <strong>determinant</strong> and the <strong>inverse</strong> of the covariance</li>
+<li>a symbol $~^\top$ indicates the <strong>transpose</strong></li>
+</ul>
+<p>Wikipedia: <a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">Multivariate normal distribution</a></p>
+<h3>Notation</h3>
+<p>Formally we should write out $p(X=x,Y=y)$ .</p>
+<p>In practice we often use $p(x,y)$ .</p>
+<ul>
+<li>this looks very much like we might write a multivariate function, eg, $f(x,y) = \frac{x}{y}$</li>
+<li>for a multivariate function though, $f(x,y)\neq f(y,x)$</li>
+<li>however $p(x,y) = p(y,x)$ because $p(X=x,Y=y) = p(Y=y,X=x)$</li>
+</ul>
+<p>We now quickly review the <strong>rules of probability</strong>.</p>
+<h3>Normalisation</h3>
+<p>All distributions are normalised.</p>
+<ul>
+<li>this is clear from the fact that $\sum_{x\in {\cal X}} n_{x} = N$, which gives
+$$
+  \sum_{x\in {\cal X}} p(x) = \lim_{N\rightarrow\infty} \frac{\sum_{x\in {\cal X}} n_x}{N} = \lim_{N\rightarrow\infty} \frac{N}{N} = 1
+$$</li>
+</ul>
+<p>A similar result can be derived for the marginal and conditional distributions.</p>
+<h3>Product Rule and Sum Rule</h3>
+<p>The product rule of probability:
+$$
+  \underbrace{p(x,y)}<em _text_conditional="\text{conditional" probability>{\text{joint probability}} = \underbrace{p(y|x)}</em>}\cdot\ p(x)
+$$</p>
+<p>The sum rule of probability:
+$$
+  \underbrace{p(y)}<em X _cal="{\cal" x_in="x\in">{\text{marginal probability}} = \sum</em>} p(x,y) = \sum_{x\in {\cal X}} p(y|x)p(x)
+$$</p>
+<p>Wikipedia:
+<a href="https://en.wikipedia.org/wiki/Product_rule">Product rule</a> /
+<a href="https://en.wikipedia.org/wiki/Probability_axioms">Probability axioms</a></p>
+<h3>Bayes' Theorem</h3>
+<p>Bayes' theorem immediately follows the product rule:
+$$
+  p(x|y) = \frac{p(x,y)}{p(y)} = \frac{p(y|x)p(x)}{\displaystyle \sum_{x\in {\cal X}} p(y|x)p(x)}
+$$</p>
+<p>Wikipedia: <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes' theorem</a></p>
+<p>(<strong>Example</strong>)
+There are two barrels in front of you.
+Barrel One(B1) contains 20 apples and 4 oranges.
+Barrel Two(B2) contains 4 apples and 8 oranges.
+You choose a barrel randomly and select a fruit.
+It is an <strong>apple</strong>.
+What is the probability that the barrel was Barrel One?</p>
+<p>(<strong>Solution</strong>) we are given that:
+$$
+\begin{align<em>}
+  p(\text{apple}\ |\ \text{B}_1) = &amp; \frac{20}{24} &amp; \qquad p(\text{B}_1) = 0.5 \
+  p(\text{apple}\ |\ \text{B}_2) = &amp; \frac{4}{12} &amp; \qquad p(\text{B}_2) = 0.5
+\end{align</em>}
+$$
+Use the sum rule to calculate
+$$
+  p(\text{apple}) = p(\text{apple}\ |\ \text{B}_1)p(\text{B}_1) + p(\text{apple}\ |\ \text{B}_2)P(\text{B}_2) = \frac{20}{24}\times 0.5 + \frac{4}{12}\times 0.5 = \frac{7}{12}
+$$
+and Bayes' theorem tells us that:
+$$
+  p(\text{B}_1\ |\ \text{apple}) = \frac{p(\text{apple}\ |\ \text{B}_1)P(\text{B}_1)}{P(\text{apple})} = \frac{\frac{20}{24}\times 0.5}{\frac{7}{12}} = \frac{5}{7}
+$$</p>
+<h3>Expected Value</h3>
+<p>The <strong>expected value</strong> (or mean, average) of a random variable $X$ is
+$$
+  \mathbb{E}[X] = \int_{-\infty}^{\infty} xp(x) dx
+$$</p>
+<ul>
+<li>discrete type is $\mathbb{E}[X] = \sum_{x\in {\cal X}} x p(x)$ for all possible events ${\cal X}$</li>
+</ul>
+<p>The expected value of a function $f(x)$ is
+$$
+  \mathbb{E}[f(x)] = \int_{-\infty}^{\infty} f(x) p(x) dx
+$$</p>
+<p>Wikipedia: <a href="https://en.wikipedia.org/wiki/Expected_value">Expected value</a></p>
+<h3>Variance</h3>
+<p>The <strong>variance</strong> is the expected value of $f(x) = (x - \mathbb{E}[X])^2$, ie,
+$$
+  \mathbb{V}ar[X] = \mathbb{E}[(X - \mathbb{E}[X])^2] = \int_{-\infty}^{\infty} (x - \mathbb{E}[X])^2 p(x) dx
+$$</p>
+<ul>
+<li>discrete type is $\mathbb{V}ar[X] = \sum_{x\in {\cal X}} (x - \mathbb{E}[X])^2 p(x)$</li>
+</ul>
+<p>(note)
+$
+  \mathbb{V}ar[X]
+  = \mathbb{E}[(X - \mathbb{E}[X])^2]
+  = \mathbb{E}[X^2 - 2X\mathbb{E}(X) + \mathbb{E}[X]^2]
+  = \mathbb{E}[X^2] - 2\mathbb{E}(X)\mathbb{E}(X) + \mathbb{E}[X]^2
+  = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+$</p>
+<p>Wikipedia: <a href="https://en.wikipedia.org/wiki/Variance">Variance</a></p>
+<h3>Derivatives with Vectors</h3>
+<p>We have scalars $x$, $y$, and $n$- and $m$-dimensional vectors $\mathbf{x}$, $\mathbf{y}$, where
+$$
+  \mathbf{x} = \left( \begin{array}{c} x_1 \ \vdots \ x_n \end{array} \right)
+  \qquad
+  \mathbf{y} = \left( \begin{array}{c} y_1 \ \vdots \ y_m \end{array} \right)
+$$
+Derivatives with vectors using the <strong>denominator-layout</strong> notation:
+$$
+  \frac{\partial \mathbf{y}}{\partial x} = \left( \frac{\partial y_1}{\partial x} \cdots \frac{\partial y_m}{\partial x} \right)
+  \qquad
+  \frac{\partial y}{\partial \mathbf{x}} = \left( \begin{array}{c} \frac{\partial y}{\partial x_1} \ \vdots \ \frac{\partial y}{\partial x_n} \end{array} \right)
+  \qquad
+  \frac{\partial \mathbf{y}}{\partial \mathbf{x}} = \left( \begin{array}{ccc} \frac{\partial y_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial y_m}{\partial x_1} \ \vdots &amp; &amp; \vdots \ \frac{\partial y_1}{\partial x_n} &amp; \cdots &amp; \frac{\partial y_m}{\partial x_n} \end{array} \right)
+$$</p>
+<h3>Some Scalar-by-Vector Identities</h3>
+<p>For vectors $\mathbf{a}$, $\mathbf{w}$ and a square matrix $\mathbf{A}$ :
+$$
+\begin{align<em>}
+  \frac{\partial \mathbf{a}^\top \mathbf{w}}{\partial \mathbf{w}} = &amp; \mathbf{a} \
+  \frac{\partial \mathbf{w}^\top \mathbf{A} \mathbf{w}}{\partial \mathbf{w}} = &amp; (\mathbf{A} + \mathbf{A}^\top)\mathbf{w}
+\end{align</em>}
+$$
+Wikipedia: <a href="https://en.wikipedia.org/wiki/Matrix_calculus">Matrix calculus</a></p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
 </html>
