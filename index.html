@@ -1,316 +1,393 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title> Stardj is coding </title>
-    <link rel="shortcut icon" href="/images/" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog about Me and my Linux | Stardj is coding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="stardj" />
+    <meta name="kittycheck_rumble" content="true" />
+    <meta name="kittycheck_position" content="top=60,right=60" />
 
-    <script src="/theme/js/jquery-3.1.1.min.js"></script>
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/theme/css/font-awesome.css" rel="stylesheet">
+    <link href="/theme/css/pygments.css" rel="stylesheet">
 
-    <!-- extra css -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <!-- uikit basic -->
-    <link rel="stylesheet" href="/theme/css/uikit.min.css"/>
-    <script src="/theme/js/uikit.min.js"></script>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/img/apple-touch-icon-114x114.png">
 
-    <!-- uk components -->
-    <link rel="stylesheet" href="/theme/css/components/sticky.css"/>
-    <script src="/theme/js/components/sticky.js"></script>
-    <link rel="stylesheet" href="/theme/css/components/search.css"/>
-    <script src="/theme/js/components/search.js"></script>
+    <link href="/" type="application/atom+xml" rel="alternate" title="Stardj is coding ATOM Feed" />
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">Stardj is coding </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li >
+                  <a href="/category/algorithm.html">
+						        <i class="icon-folder-open icon-large"></i>Algorithm
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/machine-learning.html">
+						        <i class="icon-folder-open icon-large"></i>Machine Learning
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/uncategorized.html">
+						        <i class="icon-folder-open icon-large"></i>Uncategorized
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/ya-si.html">
+						        <i class="icon-folder-open icon-large"></i>雅思
+					         </a>
+                </li>
+              <ul class="nav pull-right">
+                    <li><a href="/"><i class="icon-th-list"></i>Archives</a></li>
+              </ul>
 
-    <!-- self defined  -->
-    <link rel="stylesheet" href="/theme/css/highlight.css"/>
-    <link rel="stylesheet" href="/theme/css/main.css"/>
-
-</head>
-<body>
-
-    <main class="jojo-theme">
-        <div class="uk-container uk-container-center">
-
-            <!-- nav -->
-
-
-            <div class="uk-grid uk-margin-large-top">
-                <div class="uk-width-medium-1-10">
-
-
-
-                </div>
-                <div class="uk-width-medium-7-10">
-                    <div class="uk-margin-top">
-                        <!-- content -->
-    <article class="uk-article">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/learning-note.html">Learning note</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/probability-and-other-preliminaries.html" rel="bookmark"> Probability and Other Preliminaries </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 01 October 2017
-                    </p>
-                    <p>Mathematica</p>
-                    <!--<p> Probability and Other Preliminaries probability distribution rules of probability review for linear algebra Preview topics this week mainly concerns a brief review for probability and linear algebra lab class introduces use of Jupyter, Python and Pandas Probability Distribution The probability distribution function of a random variable \(X\) is $$ F(x) = P(X \leq x) $$ where the notation...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/probability-and-other-preliminaries.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/ya-si-xiao-zuo-wen.html" rel="bookmark"> 雅思小作文 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 10 April 2016
-                    </p>
-                    <p>雅思小作文</p>
-                    <!--<p> 小作文 小作文一般分为两类：数据类和非数据类 数据类一般分为： 表格图 柱状图 折现图 饼图 其中折线图为动态对比图，其余的为静态对比图，其开头段的写法在讲义中有提到 。 数据类的小作文审题步骤为： 确定时态（是过去时，是现在时，是将来时，还是混合时态） 分类（按照一定的逻辑来对数据进行分类，方便写作分段也方便对比） 对比（描写对比比较强力的数据） 变化趋势（对变化趋势进行描写） 总结（一般是对整体数据的一个综述，静态的就写最值，动态的就写总体变化趋势，然后找出一个显著的数据进行总结即可） 在描写数据的时候，可以用数据做主语，也可用人做主语，也可用物做主语，这样可以体现句式的多样性。在进行对比的时候，可以用简单粗暴的排序，可以用最值比较，也可以用差值比较，这样同样也可以体现句式的多样性。具体的写作句式在讲义中有。 用数据做主语常用词组和句式：the proportion of , the figure for , the percentage of 常用的做比较的词组和句式：by contrast , in sharp contrast to this 尽量避免写模板型的话（即没有什么内容，表达不了什么具体含义的语句），这样会给考官留下不好的印象、降低得分。...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/ya-si-xiao-zuo-wen.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/ya-si-xiao-zuo-wen-zhi-di-tu-ti.html" rel="bookmark"> 雅思小作文之地图题 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 10 April 2016
-                    </p>
-                    <p>雅思小作文之地图题</p>
-                    <!--<p> 地图题 地图题的审题步骤一般如下： 时态 语态（一般是被动语态） 找不同（就是作对比） 以一个合理的顺序描述（一般不宜以东西南北这种方式来描述） 分类综述（哪些地方发生了变化哪些地方没有） 描述地图中的变化，一般使用的句式有： 原有的事物保持不变： The park will remain unchanged/in its original location. 被扩大或者被缩小： 扩大：The park expected to be enlarged/expanded/extanded/widened. 缩小：The park is reduced half in size. 原有的事物没了： The building is demolished/removed/knocked down. 新的事物被建立了： A new building is built/constructed/established/added/erected. 原有的事物被替换为： The buildings are converted into/turned into/replaced by/substituted by a park. The buildings are demolished to make way for a new park. 7+句式： 对比contrast： The park will...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/ya-si-xiao-zuo-wen-zhi-di-tu-ti.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/ya-si-xiao-zuo-wen-zhi-liu-cheng-tu.html" rel="bookmark"> 雅思小作文之流程图 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 10 April 2016
-                    </p>
-                    <p>雅思小作文之流程图</p>
-                    <!--<p> 流程图 流程图题的审题步骤一般为： 时态（一般现在时） 语态（人类加工为被动语态，生命循环为主动语态） 提炼每一步的动词（注意词性的转换） 合理的时间顺序描述（顺序句式） 综述（一共有几步，从哪里开始到哪里结束） How to describe different stages?顺序描述 矮穷矬版：连接词 高大上版：复杂句 Firstly After Secondly Before Finally So that Next Until Afterwards When Then Where/Which Following this/that This/These 状语从句 时间状语从句： At the first stage, they are cut, dried, and cooked.(连续动词简化), before/followed by being(注意语态) put in a machine. After that, the cooked apples are processed in a factory. 结果状语从句： Next, the processed apples are washed so that they are checked for quality. 条件状语从句： The life cycle begins when the adult...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/ya-si-xiao-zuo-wen-zhi-liu-cheng-tu.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/linuxchang-yong-zhi-ling.html" rel="bookmark"> Linux常用指令 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Fri 25 December 2015
-                    </p>
-                    <p>Linux常用指令</p>
-                    <!--<p> Linux常用指令 scp是linux中功能最强大的文件传输命令，可以实现从本地到远程以及远程到本地的轻松文件传输操作。 下面简单的讲解一些关于scp命令的操作，给有用的人一些参考： 首先是本地到远程的操作，操作的格式如下： scp local_file remote_username@remote_ip:remote_folder 或者 scp local_file remote_username@remote_ip:remote_file 或者 scp local_file remote_ip:remote_folder 或者 scp local_file remote_ip:remote_file 第1,2个指定了用户名，命令执行后需要再输入密码，第1个仅指定了远程的目录，文件名字不变，第2个指定了文件名； 第3,4个没有指定用户名，命令执行后需要输入用户名和密码，第3个仅指定了远程的目录，文件名字不变，第4个指定了文件名； * 例子： scp /home/space/music/1.mp3 root@www.cumt.edu.cn:/home/root/others/music scp /home/space/music/1.mp3 root@www.cumt.edu.cn:/home/root/others/music/001.mp3 scp /home/space/music/1.mp3 www.cumt.edu.cn:/home/root/others/music scp /home/space/music/1.mp3 www.cumt.edu.cn:/home/root/others/music/001.mp3 * 复制目录： * 命令格式： scp -r local_folder remote_username@remote_ip:remote_folder 或者 scp -r local_folder remote_ip:remote_folder 第1个指定了用户名，命令执行后需要再输入密码； 第2个没有指定用户名，命令执行后需要输入用户名和密码； * 例子： scp -r /home/space/music/ root@www.cumt.edu.cn:/home/root/others/ scp -r /home/space/music/ www.cumt.edu.cn:/home/root/others/ 上面 命令 将 本地 music 目录 复制 到 远程 others 目录下，即复制后有 远程 有 ../others/music 2、是实现从远程到本地的文件传输操作： 从 远程 复制到 本地，只要将 从...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/linuxchang-yong-zhi-ling.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/securecrtru-he-shi-yong-gong-gong-mi-yao-deng-lu.html" rel="bookmark"> secureCRT如何使用公共密钥登录 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 20 December 2015
-                    </p>
-                    <p>secureCRT如何使用公共密钥登录</p>
-                    <!--<p> secureCRT如何使用公共密钥登录 其实网上的文档很多。各有千秋。估计是自己明白了，别人看起来比较费劲。这里我整理一下，以备自己查阅： 配置过程分为两大部分，SecureCRT部分和Linux服务器部分。 SecureCRT部分配置 1、首先生成公钥。 打开SecureCRT（我的版本为7.0，估计其他版本基本相同）程序，点击菜单栏的“工具”--->“创建公钥”。按照步骤执行。其中一步比较重要就是选择公钥的格式。建议选择“OpenSSH”,否则在服务器端使用时需要转换为OpenSSH各式。何必多次一举呢。所以这里必须选择“OpenSSH”。如果选错了。重新生成一次就可以了。 然后选择公钥私钥存放的地方。默认Identity是私钥，Identity.pub是公钥。 2、把Identity.pub文件上传到你要登陆的Linux服务器上。方法有很多，比如ssh（先不要配置为公钥登陆），ftp等。具体操作自己搞定。上传时选择ASCII方式。 3、在SecureCRT创建服务器连接。协议使用ssh。在“鉴权”方法中，取消勾选“密码”。选择“公钥”，然后点击右边的属性按钮，在对话框中。 使用全局公钥设置：表示所有连接都使用该公钥连接服务器。 使用会话公钥设置：可以分别为每个连接指定不同的公钥。 下面的路径就是指明私钥的具体路径。注意了，这里要指明私钥的路径。 保存连接就可以了。 Linux服务器端配置 1、sshd_conf配置 主要修改如下几个内容： PermitRootLogin no # 默认为注释，先配置为禁止root用户登陆，允许root登陆太危险了。好几次差点犯错误。切记切记！ RSAAuthentication yes #默认为注释， 启用 RSA 认证 AuthorizedKeysFile .ssh/authorized_keys # 验证公钥的存放路径 PubkeyAuthentication yes # 默认为注释，启用公钥认证 PasswordAuthentication no # 禁止密码认证，默认是打开的。 保持后，重新启动ssh服务。在不同的linux服务器上，重启的方法不同。 RedHat,CentOS: service sshd restart //redhat 7 的方法已经改了。 openbsd,freebsd: /etc/rc.d/sshd restart 2、重点部分：配置公钥存放哪的问题。 要把第一部分上传上来的公钥放到用户home目录的.ssh/ 目录下。这里说明一下。如果你想使用test账号登陆，就要把公钥放到test账户的.ssh目录下。你可以直接把Identity.pub改为authorized_keys. 当然也可还是用其他方法。 比如：cat Identity.pub >> authorized_keys 另外说明一下。.ssh目录权限是700，authorized_keys文件权限为644. 重点补充，如果还有其他人也想用自己的公钥登陆服务器，该如何操作呢？ 正常操作应该为该用户在服务器上创建一个账号，重新执行本次（Linux服务器端配置，第2点）操作。当然，你也可以偷懒，把他的公钥也放到test账号的authorized_keys文件中。但两个公钥的内容之间使用换行符隔开。这样的方法还是不可取的。 最后，使用SecureCRT登陆linux服务器。 这里要注意，即使你使用公钥登陆服务器，当你连接的时候，还是要你输入用户名。为何呢？不是说公钥验证么？其实，服务器要知道用你的私钥和哪个用户的.ssh目录下的authorized_keys文件内容进行解密。不可能用你的私钥和所有的用户authorized_keys文件进行匹配测试。 但是也有例外，如果你在linux系统上使用公钥登陆Linux服务器，就不需要指明用户。方法如下： # ssh 172.16.24.222 为何呢？这时系统默认以为你登陆的远程账号就是你当前登陆的账号。 如果你设置了公钥口令，连接时比如输入。为了安全，这个口令是必须要有的。在SecureCRT中，口令被翻译为：通行短语。呵呵。 补充一下，在linux系统上，如何创建公钥和私钥呢？ 方法很简单，执行ssh-keygen命令，按照提示就可以完成。完成后，自动会在当前用户的home目录，创建.ssh文件夹。 服务器端配置和上面的方法相同。...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/securecrtru-he-shi-yong-gong-gong-mi-yao-deng-lu.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/hive-121-de-an-zhuang-he-pei-zhi.html" rel="bookmark"> HIVE 1.2.1 的安装和配置 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 20 December 2015
-                    </p>
-                    <p>HIVE 1.2.1 的安装和配置</p>
-                    <!--<p> HIVE的那些事 HIVE是一个数据仓库，可以类比成数据库。但是它与传统数据库不同的是，HIVE是基于HDFS的，而传统的数据库是基于文件系统的。但是由于HIVE还是具有传统数据库的增、删、改、查功能，而HDFS中得文件是多读少写的，这显然不能符合数据库的需求，所以HIVE不能将元数据存在HDFS中。目前HIVE还是将元数据存在数据库中，如内嵌的Derby或者外联的Mysql中。 HIVE 1.2.1 的安装和配置 首先要安装hadoop，我这里的hadoop的版本是2.6.2，然后去Hive官网下载1.2.1版本的Hive。 首先将hive解压到对应的路径下： tar -zxvf apache-hive-1.2.1-bin.tar.gz 接着修改环境变量: export HADOOP_HOME=/Users/stardj/hadoop/hadoop-2.6.2 export HIVE_HOME=/Users/stardj/hive/apache-hive-1.2.1-bin export PATH=$PATH:$HIVE_HOME/bin export CLASS_PATH=$CALSSPATH:$HIVE_HOME/lib 然后修改hive的配置文件，路径为${HIVE_HOME}/conf。先修改hive_env.sh文件 # Set HADOOP_HOME to point to a specific hadoop install directory export HADOOP_HOME=/Users/stardj/hadoop/hadoop-2.6.2 # Hive Configuration Directory can be...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/hive-121-de-an-zhuang-he-pei-zhi.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/macshi-yong-sshyuan-cheng-deng-lu.html" rel="bookmark"> MAC使用SSH远程登录 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 20 December 2015
-                    </p>
-                    <p>MAC使用SSH远程登录</p>
-                    <!--<p> MAC使用SSH远程登录 打开ssh Mac Terminal是自带SSH的，可以用whereis来看看 $ whereis ssh 但是在现有进程中是找不到ssh对应的进程的： $ ps aux | grep ssh MacBook-Pro:etc stardj$ ps aux | grep ssh stardj 563 0.0 0.0 2432772 676 s000 S+ 10:16上午 0:00.00 grep ssh 直接用ssh命令链接本地主机或者远程登录主机时会遇到下列错误提示： ssh: connect...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/macshi-yong-sshyuan-cheng-deng-lu.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/bei-wang-lu.html">备忘录</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/action-dao-service-domain-util-commonde-han-yi.html" rel="bookmark"> action dao service domain util common的含义 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sun 20 December 2015
-                    </p>
-                    <p>action dao service domain util common的含义</p>
-                    <!--<p> action dao service domain util common的含义： 此篇博文只要是记录下自己对action，dao，service，domain，util和common的理解，用作备忘，以便以后查阅： java web一般都是三层架构 数据访问层（dao） 业务逻辑层（biz 或者services） 界面层（ui），既MVC模式。 工作流程：一个请求发送到action(作用：MVC中的C),action控制它发送到哪个biz处理,如果用到数据库，那么biz在连接dao，然后返回要的数据，最后action在返回响应的页面(比如jsp),因为是面向对象,所以实体domain在中间传递数据。 action为控制层也是业务层的一部分，在MVC中充当C角色，用来分配哪个业务来处理用户请求，也可理解为是一个管理器 （总开关）（作用是取掉转）（取出前台界面的数据，调用biz方法，转发到下一个action或者页面）。 biz业务层，存放好多处理业务的代码，现实中面向接口编程，一般这里定义都是业务接口，通常会有一个biz.impl这个包用来写实现类. 当然针对架构意义实现类不用说。 dao持久层,DB操作都写在这里ui 用户交互层,通常为页面,例如.jsp,aspx等页面util功能包，针对本项目工具类common通用工具包，一般一个公司会有固定的jar，好几个项目通用的，例如远程调用等 domian一般是实体对象(把现实的的事物变成java中的对象)，作用是一暂时存储数据方便持久化（存入数据库或者写入文件），即作为一个包裹封装一些数据来在不同的层以及各种java对象中使用。 util层特殊功能包，方便其它层调用，common层是共通层，整个工程可调。 举个栗子： 客户端：客户端请求 如:userAction.do?name=XXX&password=XXX ↓ action层：获取且处理请求，如获取参数name,password，初始化domain 如User u = new User();u.setName();u.setPassword()...; 调用service层 ↓ serivce层：业务逻辑处理，调用dao层 ↓ dao层：数据访问层，如具体增删改查操作 ↓ 返回service层，再返回到action层中进行页面中转等。 其中util一般放些工具类，common放入共通的类或页面等。 j2ee概念进阶 java的(PO,VO,TO,BO,DAO,POJO)解释 PO(persistant object) 持久对象 在o/r映射的时候出现的概念，如果没有o/r映射，没有这个概念存在了。通常对应数据模型(数据库),本身还有部分业务逻辑的处理。可以看成是与数据库中的表相映射的java对象。最简单的PO就是对应数据库中某个表中的一条记录，多个记录可以用PO的集合。PO中应该不包含任何对数据库的操作。 VO(value object) 值对象 通常用于业务层之间的数据传递，和PO一样也是仅仅包含数据而已。但应是抽象出的业务对象,可以和表对应,也可以不,这根据业务的需要.个人觉得同DTO(数据传输对象),在web上传递。 TO(Transfer Object)，数据传输对象 在应用程序不同tie(关系)之间传输的对象 BO(business object) 业务对象 从业务模型的角度看,见UML元件领域模型中的领域对象。封装业务逻辑的java对象,通过调用DAO方法,结合PO,VO进行业务操作。 POJO(plain ordinary java object) 简单无规则java对象 纯的传统意义的java对象。就是说在一些Object/Relation Mapping工具中，能够做到维护数据库表记录的persisent object完全是一个符合Java Bean规范的纯Java对象，没有增加别的属性和方法。我的理解就是最基本的Java Bean，只有属性字段及setter和getter方法！。 DAO(data access object) 数据访问对象 是一个sun的一个标准j2ee设计模式，这个模式中有个接口就是DAO，它负持久层的操作。为业务层提供接口。此对象用于访问数据库。通常和PO结合使用，DAO中包含了各种数据库的操作方法。通过它的方法,结合PO对数据库进行相关的操作。夹在业务逻辑与数据库资源中间。配合VO, 提供数据库的CRUD操作... O/R Mapper 对象/关系 映射 定义好所有的mapping之后，这个O/R Mapper可以帮我们做很多的工作。通过这些mappings,这个O/R Mapper可以生成所有的关于对象保存，删除，读取的SQL语句，我们不再需要写那么多行的DAL代码了。 QO(query object) 查询对象 struts 里的 ActionForm...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/action-dao-service-domain-util-commonde-han-yi.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/github-pages.html">Github-Pages</a>
-                                    </div>
-                                </div>
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/blogs.html">Blogs</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html" rel="bookmark"> 如何利用Github-Pages建立个人博客 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sat 21 November 2015
-                    </p>
-                    <p>How to make personal blogs with Github-Pages.</p>
-                    <!--<p> 知识储备 github github pages git python pip pelican markdown markdownpad 下载安装 python3下载 git下载 pip下载 如何利用Github-Pages建立个人博客 前言 Github作为现在最流行的代码厂库，在程序员中已经是家喻户晓的了。它和好的将代码和社区结合到了一起，一下主要就是将它的社区功能之一——Github-Pages。 Github-Pages有一下几个优点： 轻量级的博客，没有麻烦的配置问题 使用标记语言，比如Markdown，无需自己搭建服务器 根据Github的限制，对应的每个站有300MB的空间 可以绑定自己的域名 当然它也有缺点： 基于Git，很多东西需要自己动手，不像Wordpress那样有自己强大的后台 动态程序部分相当局限，比如没有评论功能等，不过我们有解决方案 总的来说，作为个人博客，Git-Pages应该就是最完美的解决方案之一了。 配置和使用Github-Pages Git是版本管理的未来，他的优点数不胜数，网上有很多资料，教程的话推荐这个Git中文教程，有关Git的安装、配置和使用上面都有描述，我就不重复了。 Github-Pages官网上有使用教程，简单地来说就是创建一个名字为username.github.io的仓库，然后在仓库里面写博客即可。 使用Pelican建立静态博客 Pelican是一套开源的使用Python编写的博客静态生成, 可以添加文章和和创建页面, 可以使用MarkDown reStructuredText 和 AsiiDoc 的格式来抒写, 同时使用 Disqus评论系统, 支持 RSS和Atom输出, 插件, 主题, 代码高亮等功能, 采用Jajin2模板引擎, 可以很容易的更改模板 打开git bash，进入一个自己喜欢的文件夹（注意文件夹名最好不为空，因为后续make html命令会出错），执行以下命令 mkdir blog //创建文件夹，名称可根据自己喜欢定 cd blog pelican-quickstart pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择，如下图~ 命令成功执行后，会出现pelican的框架，如下所示 blog/ ├── content...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-    </article>
-
-    <ul class="uk-pagination">
-        <li class="uk-active"><span>1</span></li>
-<li><a href="/index2.html">2</a></li><li><a href="/index2.html"><i class="uk-icon-angle-double-right"></i></a></li>    </ul>
-                    </div>
-                </div>
-                <div class="uk-width-medium-2-10">
-
-                    <!-- author info -->
-
-                    <!-- newest articles -->
-
-
-                    <!-- related links -->
-
-                </div>
-            </div>
-
-            <!-- footer -->
-
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
         </div>
-    </main>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8" id="content">
+<div class="row">
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2017-10-01T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 01 October 2017
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
 
 
-</body>
+<br/>
+	&nbsp;&nbsp;<a href="/tag/learning-note.html" class="label"><i class="icon-tag"></i>&nbsp;Learning note</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/probability-and-other-preliminaries.html">Probability and Other Preliminaries</a></h1>
+            <div class="summary"><p>Mathematica</p>
+                <a class="btn btn-small" href="/probability-and-other-preliminaries.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2016-04-10T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 10 April 2016
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/ya-si-xiao-zuo-wen.html">雅思小作文</a></h1>
+            <div class="summary"><p>雅思小作文</p>
+                <a class="btn btn-small" href="/ya-si-xiao-zuo-wen.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2016-04-10T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 10 April 2016
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/ya-si-xiao-zuo-wen-zhi-di-tu-ti.html">雅思小作文之地图题</a></h1>
+            <div class="summary"><p>雅思小作文之地图题</p>
+                <a class="btn btn-small" href="/ya-si-xiao-zuo-wen-zhi-di-tu-ti.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2016-04-10T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 10 April 2016
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/ya-si-xiao-zuo-wen-zhi-liu-cheng-tu.html">雅思小作文之流程图</a></h1>
+            <div class="summary"><p>雅思小作文之流程图</p>
+                <a class="btn btn-small" href="/ya-si-xiao-zuo-wen-zhi-liu-cheng-tu.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-12-25T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Fri 25 December 2015
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/linuxchang-yong-zhi-ling.html">Linux常用指令</a></h1>
+            <div class="summary"><p>Linux常用指令</p>
+                <a class="btn btn-small" href="/linuxchang-yong-zhi-ling.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-12-20T16:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 20 December 2015
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/securecrtru-he-shi-yong-gong-gong-mi-yao-deng-lu.html">secureCRT如何使用公共密钥登录</a></h1>
+            <div class="summary"><p>secureCRT如何使用公共密钥登录</p>
+                <a class="btn btn-small" href="/securecrtru-he-shi-yong-gong-gong-mi-yao-deng-lu.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-12-20T16:23:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 20 December 2015
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/hive-121-de-an-zhuang-he-pei-zhi.html">HIVE 1.2.1 的安装和配置</a></h1>
+            <div class="summary"><p>HIVE 1.2.1 的安装和配置</p>
+                <a class="btn btn-small" href="/hive-121-de-an-zhuang-he-pei-zhi.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-12-20T15:35:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 20 December 2015
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/macshi-yong-sshyuan-cheng-deng-lu.html">MAC使用SSH远程登录</a></h1>
+            <div class="summary"><p>MAC使用SSH远程登录</p>
+                <a class="btn btn-small" href="/macshi-yong-sshyuan-cheng-deng-lu.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-12-20T15:11:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sun 20 December 2015
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/bei-wang-lu.html" class="label"><i class="icon-tag"></i>&nbsp;备忘录</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/action-dao-service-domain-util-commonde-han-yi.html">action dao service domain util common的含义</a></h1>
+            <div class="summary"><p>action dao service domain util common的含义</p>
+                <a class="btn btn-small" href="/action-dao-service-domain-util-commonde-han-yi.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-11-21T11:38:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sat 21 November 2015
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
+
+
+<br/>
+	&nbsp;&nbsp;<a href="/tag/github-pages.html" class="label"><i class="icon-tag"></i>&nbsp;Github-Pages</a>
+	&nbsp;&nbsp;<a href="/tag/blogs.html" class="label"><i class="icon-tag"></i>&nbsp;Blogs</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">如何利用Github-Pages建立个人博客</a></h1>
+            <div class="summary"><p>How to make personal blogs with Github-Pages.</p>
+                <a class="btn btn-small" href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+
+<div class="span6">
+<div class="pagination">
+<ul>
+        <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+        <li class="active"><a href="/index.html">1</a></li>
+        <li class=""><a href="/index2.html">2</a></li>
+        <li class="next"><a href="/index2.html">Next &rarr;</a></li>
+</ul>
+</div>
+</div>
+</div>
+        </div><!--/span-->
+        <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><div><i class="icon-external-link"></i><a href="http://getpelican.com/">Pelican</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://python.org/">Python.org</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://jinja.pocoo.org/">Jinja2</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="#">You can modify those links in your config file</a></div></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+    <li><a href="#"><i class="icon-You can add links in your config file-sign icon-large"></i>You can add links in your config file</a></li>
+    <li><a href="#"><i class="icon-Another social link-sign icon-large"></i>Another social link</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/algorithm.html">
+    <i class="icon-folder-open icon-large"></i>Algorithm
+</a>
+</li>
+<li>
+<a href="/category/machine-learning.html">
+    <i class="icon-folder-open icon-large"></i>Machine Learning
+</a>
+</li>
+<li>
+<a href="/category/uncategorized.html">
+    <i class="icon-folder-open icon-large"></i>Uncategorized
+</a>
+</li>
+<li>
+<a href="/category/ya-si.html">
+    <i class="icon-folder-open icon-large"></i>雅思
+</a>
+</li>
+
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
 </html>

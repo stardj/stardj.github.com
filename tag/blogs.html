@@ -1,97 +1,178 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title> Stardj is coding </title>
-    <link rel="shortcut icon" href="/images/" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stardj is coding - Blogs | Stardj is coding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="stardj" />
+    <meta name="kittycheck_rumble" content="true" />
+    <meta name="kittycheck_position" content="top=60,right=60" />
 
-    <script src="/theme/js/jquery-3.1.1.min.js"></script>
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/theme/css/font-awesome.css" rel="stylesheet">
+    <link href="/theme/css/pygments.css" rel="stylesheet">
 
-    <!-- extra css -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <!-- uikit basic -->
-    <link rel="stylesheet" href="/theme/css/uikit.min.css"/>
-    <script src="/theme/js/uikit.min.js"></script>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/img/apple-touch-icon-114x114.png">
 
-    <!-- uk components -->
-    <link rel="stylesheet" href="/theme/css/components/sticky.css"/>
-    <script src="/theme/js/components/sticky.js"></script>
-    <link rel="stylesheet" href="/theme/css/components/search.css"/>
-    <script src="/theme/js/components/search.js"></script>
+    <link href="/" type="application/atom+xml" rel="alternate" title="Stardj is coding ATOM Feed" />
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">Stardj is coding </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li >
+                  <a href="/category/algorithm.html">
+						        <i class="icon-folder-open icon-large"></i>Algorithm
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/machine-learning.html">
+						        <i class="icon-folder-open icon-large"></i>Machine Learning
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/uncategorized.html">
+						        <i class="icon-folder-open icon-large"></i>Uncategorized
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/ya-si.html">
+						        <i class="icon-folder-open icon-large"></i>雅思
+					         </a>
+                </li>
+              <ul class="nav pull-right">
+                    <li><a href="/"><i class="icon-th-list"></i>Archives</a></li>
+              </ul>
 
-    <!-- self defined  -->
-    <link rel="stylesheet" href="/theme/css/highlight.css"/>
-    <link rel="stylesheet" href="/theme/css/main.css"/>
-
-</head>
-<body>
-
-    <main class="jojo-theme">
-        <div class="uk-container uk-container-center">
-
-            <!-- nav -->
-
-
-            <div class="uk-grid uk-margin-large-top">
-                <div class="uk-width-medium-1-10">
-
-
-
-                </div>
-                <div class="uk-width-medium-7-10">
-                    <div class="uk-margin-top">
-                        <!-- content -->
-    <article class="uk-article">
-            <div class="uk-grid">
-                <div class="uk-width-medium-2-10">
-                        <div class="tags">
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/github-pages.html">Github-Pages</a>
-                                    </div>
-                                </div>
-                                <div>
-                                    <i class="uk-icon-tag"></i>
-                                    <div class="uk-badge uk-badge-notification">
-                                        <a href="/tag/blogs.html">Blogs</a>
-                                    </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="uk-width-medium-8-10">
-                    <h2>
-                        <a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html" rel="bookmark"> 如何利用Github-Pages建立个人博客 </a>
-                    </h2>
-                    <p class="uk-article-meta">
-                        Sat 21 November 2015
-                    </p>
-                    <p>How to make personal blogs with Github-Pages.</p>
-                    <!--<p> 知识储备 github github pages git python pip pelican markdown markdownpad 下载安装 python3下载 git下载 pip下载 如何利用Github-Pages建立个人博客 前言 Github作为现在最流行的代码厂库，在程序员中已经是家喻户晓的了。它和好的将代码和社区结合到了一起，一下主要就是将它的社区功能之一——Github-Pages。 Github-Pages有一下几个优点： 轻量级的博客，没有麻烦的配置问题 使用标记语言，比如Markdown，无需自己搭建服务器 根据Github的限制，对应的每个站有300MB的空间 可以绑定自己的域名 当然它也有缺点： 基于Git，很多东西需要自己动手，不像Wordpress那样有自己强大的后台 动态程序部分相当局限，比如没有评论功能等，不过我们有解决方案 总的来说，作为个人博客，Git-Pages应该就是最完美的解决方案之一了。 配置和使用Github-Pages Git是版本管理的未来，他的优点数不胜数，网上有很多资料，教程的话推荐这个Git中文教程，有关Git的安装、配置和使用上面都有描述，我就不重复了。 Github-Pages官网上有使用教程，简单地来说就是创建一个名字为username.github.io的仓库，然后在仓库里面写博客即可。 使用Pelican建立静态博客 Pelican是一套开源的使用Python编写的博客静态生成, 可以添加文章和和创建页面, 可以使用MarkDown reStructuredText 和 AsiiDoc 的格式来抒写, 同时使用 Disqus评论系统, 支持 RSS和Atom输出, 插件, 主题, 代码高亮等功能, 采用Jajin2模板引擎, 可以很容易的更改模板 打开git bash，进入一个自己喜欢的文件夹（注意文件夹名最好不为空，因为后续make html命令会出错），执行以下命令 mkdir blog //创建文件夹，名称可根据自己喜欢定 cd blog pelican-quickstart pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在pelicanconf.py文件中进行更改，所以你可以随意选择，如下图~ 命令成功执行后，会出现pelican的框架，如下所示 blog/ ├── content...</p>-->
-                    <p class="uk-text-right jojo-read-more"><a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">Read More...</a></p>
-                </div>
-            </div>
-            <hr class="uk-article-divider">
-    </article>
-
-                    </div>
-                </div>
-                <div class="uk-width-medium-2-10">
-
-                    <!-- author info -->
-
-                    <!-- newest articles -->
-
-
-                    <!-- related links -->
-
-                </div>
-            </div>
-
-            <!-- footer -->
-
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
         </div>
-    </main>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8" id="content">
+<div class="row">
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-11-21T11:38:00+08:00">
+    <i class="icon-calendar"></i>&nbsp;Sat 21 November 2015
+</abbr>
+<br/><a href="/author/stardj.html"><i class="icon-user"></i>&nbsp;stardj</a>
 
 
-</body>
+<br/>
+	&nbsp;&nbsp;<a href="/tag/github-pages.html" class="label"><i class="icon-tag"></i>&nbsp;Github-Pages</a>
+	&nbsp;&nbsp;<a href="/tag/blogs.html" class="label"><i class="icon-tag"></i>&nbsp;Blogs</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">如何利用Github-Pages建立个人博客</a></h1>
+            <div class="summary"><p>How to make personal blogs with Github-Pages.</p>
+                <a class="btn btn-small" href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+
+<div class="span6">
+</div>
+</div>
+        </div><!--/span-->
+        <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><div><i class="icon-external-link"></i><a href="http://getpelican.com/">Pelican</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://python.org/">Python.org</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://jinja.pocoo.org/">Jinja2</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="#">You can modify those links in your config file</a></div></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+    <li><a href="#"><i class="icon-You can add links in your config file-sign icon-large"></i>You can add links in your config file</a></li>
+    <li><a href="#"><i class="icon-Another social link-sign icon-large"></i>Another social link</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/algorithm.html">
+    <i class="icon-folder-open icon-large"></i>Algorithm
+</a>
+</li>
+<li>
+<a href="/category/machine-learning.html">
+    <i class="icon-folder-open icon-large"></i>Machine Learning
+</a>
+</li>
+<li>
+<a href="/category/uncategorized.html">
+    <i class="icon-folder-open icon-large"></i>Uncategorized
+</a>
+</li>
+<li>
+<a href="/category/ya-si.html">
+    <i class="icon-folder-open icon-large"></i>雅思
+</a>
+</li>
+
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
 </html>

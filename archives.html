@@ -1,92 +1,179 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title> Stardj is coding </title>
-    <link rel="shortcut icon" href="/images/" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog about Me and my Linux | Stardj is coding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="stardj" />
+    <meta name="kittycheck_rumble" content="true" />
+    <meta name="kittycheck_position" content="top=60,right=60" />
 
-    <script src="/theme/js/jquery-3.1.1.min.js"></script>
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/theme/css/font-awesome.css" rel="stylesheet">
+    <link href="/theme/css/pygments.css" rel="stylesheet">
 
-    <!-- extra css -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <!-- uikit basic -->
-    <link rel="stylesheet" href="/theme/css/uikit.min.css"/>
-    <script src="/theme/js/uikit.min.js"></script>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/img/apple-touch-icon-114x114.png">
 
-    <!-- uk components -->
-    <link rel="stylesheet" href="/theme/css/components/sticky.css"/>
-    <script src="/theme/js/components/sticky.js"></script>
-    <link rel="stylesheet" href="/theme/css/components/search.css"/>
-    <script src="/theme/js/components/search.js"></script>
+    <link href="/" type="application/atom+xml" rel="alternate" title="Stardj is coding ATOM Feed" />
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">Stardj is coding </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li >
+                  <a href="/category/algorithm.html">
+						        <i class="icon-folder-open icon-large"></i>Algorithm
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/machine-learning.html">
+						        <i class="icon-folder-open icon-large"></i>Machine Learning
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/uncategorized.html">
+						        <i class="icon-folder-open icon-large"></i>Uncategorized
+					         </a>
+                </li>
+                <li >
+                  <a href="/category/ya-si.html">
+						        <i class="icon-folder-open icon-large"></i>雅思
+					         </a>
+                </li>
+              <ul class="nav pull-right">
+                    <li><a href="/"><i class="icon-th-list"></i>Archives</a></li>
+              </ul>
 
-    <!-- self defined  -->
-    <link rel="stylesheet" href="/theme/css/highlight.css"/>
-    <link rel="stylesheet" href="/theme/css/main.css"/>
-
-</head>
-<body>
-
-    <main class="jojo-theme">
-        <div class="uk-container uk-container-center">
-
-            <!-- nav -->
-
-
-            <div class="uk-grid uk-margin-large-top">
-                <div class="uk-width-medium-1-10">
-
-
-
-                </div>
-                <div class="uk-width-medium-7-10">
-                    <div class="uk-margin-top">
-                        <!-- content -->
-   <article class="uk-article">
-        <dl>
-                    <dt>Sun 01 October 2017</dt>
-                <dd><a href="/probability-and-other-preliminaries.html">Probability and Other Preliminaries</a></dd>
-                    <dt>Sun 10 April 2016</dt>
-                <dd><a href="/ya-si-xiao-zuo-wen.html">雅思小作文</a></dd>
-                    <dt>Sun 10 April 2016</dt>
-                <dd><a href="/ya-si-xiao-zuo-wen-zhi-di-tu-ti.html">雅思小作文之地图题</a></dd>
-                    <dt>Sun 10 April 2016</dt>
-                <dd><a href="/ya-si-xiao-zuo-wen-zhi-liu-cheng-tu.html">雅思小作文之流程图</a></dd>
-                    <dt>Fri 25 December 2015</dt>
-                <dd><a href="/linuxchang-yong-zhi-ling.html">Linux常用指令</a></dd>
-                    <dt>Sun 20 December 2015</dt>
-                <dd><a href="/securecrtru-he-shi-yong-gong-gong-mi-yao-deng-lu.html">secureCRT如何使用公共密钥登录</a></dd>
-                    <dt>Sun 20 December 2015</dt>
-                <dd><a href="/hive-121-de-an-zhuang-he-pei-zhi.html">HIVE 1.2.1 的安装和配置</a></dd>
-                    <dt>Sun 20 December 2015</dt>
-                <dd><a href="/macshi-yong-sshyuan-cheng-deng-lu.html">MAC使用SSH远程登录</a></dd>
-                    <dt>Sun 20 December 2015</dt>
-                <dd><a href="/action-dao-service-domain-util-commonde-han-yi.html">action dao service domain util common的含义</a></dd>
-                    <dt>Sat 21 November 2015</dt>
-                <dd><a href="/ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html">如何利用Github-Pages建立个人博客</a></dd>
-                    <dt>Tue 10 November 2015</dt>
-                <dd><a href="/ba-da-pai-xu.html">八大排序</a></dd>
-                    <dt>Tue 10 November 2015</dt>
-                <dd><a href="/helloworld.html">HelloWorld</a></dd>
-        </dl>
-    </article>
-                    </div>
-                </div>
-                <div class="uk-width-medium-2-10">
-
-                    <!-- author info -->
-
-                    <!-- newest articles -->
-
-
-                    <!-- related links -->
-
-                </div>
-            </div>
-
-            <!-- footer -->
-
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
         </div>
-    </main>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8" id="content">
+<section id="content">
+<h1>Archives for Stardj is coding</h1>
+
+<dl>
+	<dt>Sun 01 October 2017</dt>
+	<dd><a href='probability-and-other-preliminaries.html'>Probability and Other Preliminaries</a></dd>
+	<dt>Sun 10 April 2016</dt>
+	<dd><a href='ya-si-xiao-zuo-wen.html'>雅思小作文</a></dd>
+	<dt>Sun 10 April 2016</dt>
+	<dd><a href='ya-si-xiao-zuo-wen-zhi-di-tu-ti.html'>雅思小作文之地图题</a></dd>
+	<dt>Sun 10 April 2016</dt>
+	<dd><a href='ya-si-xiao-zuo-wen-zhi-liu-cheng-tu.html'>雅思小作文之流程图</a></dd>
+	<dt>Fri 25 December 2015</dt>
+	<dd><a href='linuxchang-yong-zhi-ling.html'>Linux常用指令</a></dd>
+	<dt>Sun 20 December 2015</dt>
+	<dd><a href='securecrtru-he-shi-yong-gong-gong-mi-yao-deng-lu.html'>secureCRT如何使用公共密钥登录</a></dd>
+	<dt>Sun 20 December 2015</dt>
+	<dd><a href='hive-121-de-an-zhuang-he-pei-zhi.html'>HIVE 1.2.1 的安装和配置</a></dd>
+	<dt>Sun 20 December 2015</dt>
+	<dd><a href='macshi-yong-sshyuan-cheng-deng-lu.html'>MAC使用SSH远程登录</a></dd>
+	<dt>Sun 20 December 2015</dt>
+	<dd><a href='action-dao-service-domain-util-commonde-han-yi.html'>action dao service domain util common的含义</a></dd>
+	<dt>Sat 21 November 2015</dt>
+	<dd><a href='ru-he-li-yong-github-pagesjian-li-ge-ren-bo-ke.html'>如何利用Github-Pages建立个人博客</a></dd>
+	<dt>Tue 10 November 2015</dt>
+	<dd><a href='ba-da-pai-xu.html'>八大排序</a></dd>
+	<dt>Tue 10 November 2015</dt>
+	<dd><a href='helloworld.html'>HelloWorld</a></dd>
+</dl>
+</section>
+        </div><!--/span-->
+        <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><div><i class="icon-external-link"></i><a href="http://getpelican.com/">Pelican</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://python.org/">Python.org</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://jinja.pocoo.org/">Jinja2</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="#">You can modify those links in your config file</a></div></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+    <li><a href="#"><i class="icon-You can add links in your config file-sign icon-large"></i>You can add links in your config file</a></li>
+    <li><a href="#"><i class="icon-Another social link-sign icon-large"></i>Another social link</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/algorithm.html">
+    <i class="icon-folder-open icon-large"></i>Algorithm
+</a>
+</li>
+<li>
+<a href="/category/machine-learning.html">
+    <i class="icon-folder-open icon-large"></i>Machine Learning
+</a>
+</li>
+<li>
+<a href="/category/uncategorized.html">
+    <i class="icon-folder-open icon-large"></i>Uncategorized
+</a>
+</li>
+<li>
+<a href="/category/ya-si.html">
+    <i class="icon-folder-open icon-large"></i>雅思
+</a>
+</li>
 
 
-</body>
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
 </html>
