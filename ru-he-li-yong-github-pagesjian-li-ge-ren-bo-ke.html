@@ -94,23 +94,23 @@
 <h3>使用Pelican建立静态博客</h3>
 <p><code>Pelican</code>是一套开源的使用Python编写的博客静态生成, 可以添加文章和和创建页面, 可以使用<code>MarkDown</code> <code>reStructuredText</code> 和 <code>AsiiDoc</code> 的格式来抒写, 同时使用 <code>Disqus</code>评论系统, 支持 <code>RSS</code>和<code>Atom</code>输出, 插件, 主题, 代码高亮等功能, 采用<code>Jajin2</code>模板引擎, 可以很容易的更改模板</p>
 <p>打开git bash，进入一个自己喜欢的文件夹（注意文件夹名最好不为空，因为后续make html命令会出错），执行以下命令</p>
-<div class="highlight"><pre>mkdir blog //创建文件夹，名称可根据自己喜欢定
-<span class="nb">cd </span>blog
+<div class="highlight"><pre><span></span>mkdir blog //创建文件夹，名称可根据自己喜欢定
+<span class="nb">cd</span> blog
 pelican-quickstart
 </pre></div>
 
 
 <p>pelican-quickstart执行命令后，会提示输入博客的配置项，除了少数几个必填以外，其它都可以选择默认，而且都可以在<code>pelicanconf.py</code>文件中进行更改，所以你可以随意选择，如下图~</p>
-<p><img alt="pelican1" src="https://raw.githubusercontent.com/stardj/MarkDownPhotos/master/pelican1.png" /></p>
+<p><img alt="pelican1" src="https://raw.githubusercontent.com/stardj/MarkDownPhotos/master/pelican1.png"></p>
 <p>命令成功执行后，会出现pelican的框架，如下所示</p>
-<div class="highlight"><pre>blog/
-├── content                <span class="c"># 存放输入的markdown或RST源文件</span>
-│   └── <span class="o">(</span>pages<span class="o">)</span>            <span class="c"># 存放手工创建的静态页面，可选</span>
-├── output                 <span class="c"># 存放最终生成的静态博客</span>
-├── develop_server.sh      <span class="c"># 测试服务器</span>
-├── Makefile               <span class="c"># 管理博客的Makefile</span>
-├── pelicanconf.py         <span class="c"># 配置文件</span>
-└── publishconf.py         <span class="c"># 发布文件，可删除</span>
+<div class="highlight"><pre><span></span>blog/
+├── content                <span class="c1"># 存放输入的markdown或RST源文件</span>
+│   └── <span class="o">(</span>pages<span class="o">)</span>            <span class="c1"># 存放手工创建的静态页面，可选</span>
+├── output                 <span class="c1"># 存放最终生成的静态博客</span>
+├── develop_server.sh      <span class="c1"># 测试服务器</span>
+├── Makefile               <span class="c1"># 管理博客的Makefile</span>
+├── pelicanconf.py         <span class="c1"># 配置文件</span>
+└── publishconf.py         <span class="c1"># 发布文件，可删除</span>
 </pre></div>
 
 
@@ -119,7 +119,7 @@ pelican-quickstart
 <!— 插入图片 —>
 
 <p>图中左侧是我们书写的markdown格式的源文件，右边则是即使预览效果，很棒吧~ 至于源文件顶部<code>Title,Date,Category等</code>内容则是必须的，具体可参见<a href="http://docs.getpelican.com/en/3.3.0/getting_started.html#writing-content-using-pelican">文档</a>，它们各自意义如下</p>
-<div class="highlight"><pre>Title: 文章标题
+<div class="highlight"><pre><span></span>Title: 文章标题
 Date: 创建日期
 Modified: 修改日期
 Category: 文章分类，标志本文处于该分类下
@@ -130,7 +130,7 @@ Author: 作者
 
 
 <p>写完后，回到<code>blog</code>目录下，执行<code>make html</code>命令进行博客的生成:</p>
-<div class="highlight"><pre>make html
+<div class="highlight"><pre><span></span>make html
 <span class="o">(</span>pelican e:/blog/content/ -o e:/blog/output -s e:/blog/pelicanconfg.py<span class="o">)</span>
 </pre></div>
 
@@ -139,25 +139,25 @@ Author: 作者
 <p><code>make serve</code>命令也可由第二行替代，在浏览器中输入<code>http://localhost:8000</code>即可看到博文效果。</p>
 <h3>主题选择</h3>
 <p>回到<code>blog</code>目录下，按如下步骤下载pelican官方主题，从里面挑选出自己喜欢的主题吧，大多数主题预览界面你可以打开这个<a href="http://pelicanthemes.com/">网页</a>进行查看。不过如今pelican又新出了很多主题，所以你需看看<a href="https://github.com/getpelican/pelican-themes">pelican主题开源库</a>。</p>
-<div class="highlight"><pre>git clone https://github.com/getpelican/pelican-themes.git
+<div class="highlight"><pre><span></span>git clone https://github.com/getpelican/pelican-themes.git
 </pre></div>
 
 
 <p>打开<code>pelicanconf.py</code>配置文件，更改或添加<code>THEME</code>为自己喜欢的主题，例如本博客所挑选的gum，更多的配置含义请关注<a href="http://docs.getpelican.com/en/3.3.0/settings.html">官方文档</a>。</p>
-<div class="highlight"><pre>THEME = &#39;pelican-themes/gum&#39;
+<div class="highlight"><pre><span></span>THEME = &#39;pelican-themes/gum&#39;
 </pre></div>
 
 
 <h3>添加评论系统</h3>
 <p>开启个人博客的原因在于分享知识，分享就需要交流，评论模块当然少不了。在<a href="https://disqus.com/">Disqus</a>上申请帐号，按照流程Disqus会分配给你站点的Shortname，记牢Shortname，如果忘了请进入admin/settings中查看。然后同理，在<code>pelicanconf.py</code>添加</p>
-<div class="highlight"><pre>DISQUS_SITENAME = Shortname
+<div class="highlight"><pre><span></span>DISQUS_SITENAME = Shortname
 </pre></div>
 
 
 <h3>博文发布</h3>
 <p>经过以上的折腾，离成功只差最后一步呢。写好的博文总要找个站点发布吧，本文基于github pages，当然你也可以选择你熟悉的站点服务器。具体步骤如<a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">官方教程</a>，非常简单。按照官方教程，你就拥有一个二级域名和一个版本库，比如我的<a href="http://stardj.github.com/">http://stardj.github.com/</a>，当然现在访问会出现跳转，这在后面独立域名章节会介绍。</p>
 <p>进入上一章节所示的<code>output</code>目录下，依次执行以下命令</p>
-<div class="highlight"><pre>git init
+<div class="highlight"><pre><span></span>git init
 git add .
 git remote add origin https://github.com/stardj/stardj.github.io
 git pull origin master

@@ -60,28 +60,28 @@
 <h4>HIVE 1.2.1 的安装和配置</h4>
 <p>首先要安装hadoop，我这里的hadoop的版本是2.6.2，然后去<a href="http://hive.apache.org/downloads.html">Hive官网</a>下载1.2.1版本的Hive。</p>
 <p>首先将hive解压到对应的路径下：</p>
-<div class="highlight"><pre>tar -zxvf apache-hive-1.2.1-bin.tar.gz
+<div class="highlight"><pre><span></span>tar -zxvf apache-hive-1.2.1-bin.tar.gz
 </pre></div>
 
 
 <p>接着修改环境变量:</p>
-<div class="highlight"><pre><span class="nb">export </span><span class="nv">HADOOP_HOME</span><span class="o">=</span>/Users/stardj/hadoop/hadoop-2.6.2
-<span class="nb">export </span><span class="nv">HIVE_HOME</span><span class="o">=</span>/Users/stardj/hive/apache-hive-1.2.1-bin
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HIVE_HOME</span>/bin
-<span class="nb">export </span><span class="nv">CLASS_PATH</span><span class="o">=</span><span class="nv">$CALSSPATH</span>:<span class="nv">$HIVE_HOME</span>/lib
+<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">HADOOP_HOME</span><span class="o">=</span>/Users/stardj/hadoop/hadoop-2.6.2
+<span class="nb">export</span> <span class="nv">HIVE_HOME</span><span class="o">=</span>/Users/stardj/hive/apache-hive-1.2.1-bin
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HIVE_HOME</span>/bin
+<span class="nb">export</span> <span class="nv">CLASS_PATH</span><span class="o">=</span><span class="nv">$CALSSPATH</span>:<span class="nv">$HIVE_HOME</span>/lib
 </pre></div>
 
 
 <p>然后修改hive的配置文件，路径为${HIVE_HOME}/conf。先修改hive_env.sh文件</p>
-<div class="highlight"><pre><span class="c"># Set HADOOP_HOME to point to a specific hadoop install directory</span>
-<span class="nb">export </span><span class="nv">HADOOP_HOME</span><span class="o">=</span>/Users/stardj/hadoop/hadoop-2.6.2
-<span class="c"># Hive Configuration Directory can be controlled by:</span>
-<span class="nb">export </span><span class="nv">HIVE_CONF_DIR</span><span class="o">=</span>/Users/stardj/hive/apache-hive-1.2.1-bin/conf
+<div class="highlight"><pre><span></span><span class="c1"># Set HADOOP_HOME to point to a specific hadoop install directory</span>
+<span class="nb">export</span> <span class="nv">HADOOP_HOME</span><span class="o">=</span>/Users/stardj/hadoop/hadoop-2.6.2
+<span class="c1"># Hive Configuration Directory can be controlled by:</span>
+<span class="nb">export</span> <span class="nv">HIVE_CONF_DIR</span><span class="o">=</span>/Users/stardj/hive/apache-hive-1.2.1-bin/conf
 </pre></div>
 
 
 <p>修改完hive_env.sh文件后，再将hive-default.xml.template复制并改名为hive-site.xml，清除里面得全部内容（因为hive会先加载default那个文件，再去加载site文件，如果两个文件里有相同得配置，那么以site为准，所以不必拷贝那么多，容易混淆）。</p>
-<div class="highlight"><pre>  <span class="nt">&lt;configuration&gt;</span>
+<div class="highlight"><pre><span></span>  <span class="nt">&lt;configuration&gt;</span>
           <span class="nt">&lt;property&gt;</span>
                   <span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionURL<span class="nt">&lt;/name&gt;</span>
                   <span class="nt">&lt;value&gt;</span>jdbc:mysql://localhost/hive?createDatabaseIfNotExist=true<span class="nt">&lt;/value&gt;</span>
@@ -112,23 +112,23 @@
 <p>Hive Web Interface（HWI）简介：Hive自带了一个Web-GUI，功能不多，可用于效果展示，如果没有安装Hue的话，是个不错的选择。</p>
 <p>由于hive-bin包中没有包含HWI的页面，只有Java代码编译好的jar包：hive-hwi-1.2.0.jar</p>
 <p>因此需要下载源码从中提取jsp文件并打包成war文件到hive-lib目录中：</p>
-<div class="highlight"><pre><span class="nb">cd </span>apache-hive-1.2.1-src/hwi
+<div class="highlight"><pre><span></span><span class="nb">cd</span> apache-hive-1.2.1-src/hwi
 jar cfM hive-hwi-1.2.1.war -C web .
 </pre></div>
 
 
 <p>然后将war包放到hive-lib目录下即可启动hwi服务：</p>
-<div class="highlight"><pre><span class="nv">hiveLogPath</span><span class="o">=</span><span class="s1">&#39;/var/log/hadoop/hive&#39;</span>
+<div class="highlight"><pre><span></span><span class="nv">hiveLogPath</span><span class="o">=</span><span class="s1">&#39;/var/log/hadoop/hive&#39;</span>
 <span class="nv">HIVE_HOME</span><span class="o">=</span><span class="s1">&#39;/usr/local/hive&#39;</span>
 mkdir -p <span class="nv">$hiveLogPath</span>
-nohup <span class="nv">$HIVE_HOME</span>/hive --service hiveserver2 &gt; <span class="nv">$hiveLogPath</span>/hiveserver2.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
-nohup <span class="nv">$HIVE_HOME</span>/hive --service metastore &gt; <span class="nv">$hiveLogPath</span>/metastore.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
-nohup <span class="nv">$HIVE_HOME</span>/hive --service hwi &gt; <span class="nv">$hiveLogPath</span>/hwi.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+nohup <span class="nv">$HIVE_HOME</span>/hive --service hiveserver2 &gt; <span class="nv">$hiveLogPath</span>/hiveserver2.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+nohup <span class="nv">$HIVE_HOME</span>/hive --service metastore &gt; <span class="nv">$hiveLogPath</span>/metastore.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+nohup <span class="nv">$HIVE_HOME</span>/hive --service hwi &gt; <span class="nv">$hiveLogPath</span>/hwi.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </pre></div>
 
 
 <p>修改hive-site.xml配置文件：</p>
-<div class="highlight"><pre><span class="nt">&lt;property&gt;</span>
+<div class="highlight"><pre><span></span><span class="nt">&lt;property&gt;</span>
     <span class="nt">&lt;name&gt;</span>hive.hwi.war.file<span class="nt">&lt;/name&gt;</span>
     <span class="nt">&lt;value&gt;</span>lib/hive-hwi-1.2.1.war<span class="nt">&lt;/value&gt;</span>
     <span class="nt">&lt;description&gt;</span>This sets the path to the HWI war file, relative to ${HIVE_HOME}. <span class="nt">&lt;/description&gt;</span>
@@ -160,12 +160,12 @@ nohup <span class="nv">$HIVE_HOME</span>/hive --service hwi &gt; <span class="nv
 <li>启动指令报错</li>
 </ul>
 <p>运行如下指令时：</p>
-<div class="highlight"><pre>hive --service hiveserver <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span>hive --service hiveserver <span class="p">&amp;</span>
 </pre></div>
 
 
 <p>报出如下的错误：</p>
-<div class="highlight"><pre>Starting Hive Thrift Server
+<div class="highlight"><pre><span></span>Starting Hive Thrift Server
 Exception in thread <span class="s2">&quot;main&quot;</span> java.lang.ClassNotFoundException: org.apache.hadoop.hive.service.HiveServer
         at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:366<span class="o">)</span>
         at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:355<span class="o">)</span>
@@ -181,7 +181,7 @@ Exception in thread <span class="s2">&quot;main&quot;</span> java.lang.ClassNotF
 
 
 <p>查看下jar包，的确没这个类了，被hiveserver2取代了，所以如果遇到这样的问题，可以使用如下指令：</p>
-<div class="highlight"><pre>hive --service hiveserver2 <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span>hive --service hiveserver2 <span class="p">&amp;</span>
 </pre></div>
 
 
@@ -189,7 +189,7 @@ Exception in thread <span class="s2">&quot;main&quot;</span> java.lang.ClassNotF
 <li>java编程中报错</li>
 </ul>
 <p>在用java写hive jdbc连接HDFS时，报出一下错误：</p>
-<div class="highlight"><pre>java.lang.ClassNotFoundException: org.apache.hadoop.hive.jdbc.HiveDriver
+<div class="highlight"><pre><span></span>java.lang.ClassNotFoundException: org.apache.hadoop.hive.jdbc.HiveDriver
     at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:366<span class="o">)</span>
     at java.net.URLClassLoader<span class="nv">$1</span>.run<span class="o">(</span>URLClassLoader.java:355<span class="o">)</span>
     at java.security.AccessController.doPrivileged<span class="o">(</span>Native Method<span class="o">)</span>
