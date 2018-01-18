@@ -418,7 +418,21 @@ Wikipedia: <a href="https://en.wikipedia.org/wiki/Matrix_calculus">Matrix calcul
 						<p class="meta"><span class="date">Le Tue 10 November 2015</span><span class="posted">Par <a href="#">stardj</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
-						 <p>八大排序</p>	
+						 <h4>八大排序(Java实现)</h4>
+<ul>
+<li>冒泡排序</li>
+</ul>
+<p>算法描述：冒泡排序是一种交换排序，主要思想就是比较相邻元素，然后将较小的元素交换到前面，较大的元素交换到后面。</p>
+<p>时间复杂度：O(N^2)</p>
+<p>稳定性描述：由于交换是逐个进行的，且相等的元素不进行交换，所以冒泡法排序是一种稳定排序算法。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BubbleSort</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">bubbleSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">n</span><span class="o">){</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span><span class="n">j</span><span class="o">++){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">]&gt;</span><span class="n">n</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">]){</span>
+                    <span class="n">n …</span></pre></div>	
 						 <a class="readmore" href="/ba-da-pai-xu.html">Lire la suite …</a>
 						</div>
 					</div>
@@ -449,7 +463,7 @@ Wikipedia: <a href="https://en.wikipedia.org/wiki/Matrix_calculus">Matrix calcul
 						<li>
 							<h2>Catégories</h2>
 							<ul>
-								 <li ><a href="/category/java.html">JAVA</a></li>
+								 <li ><a href="/category/algorithm.html">Algorithm</a></li>
 								 <li ><a href="/category/machine-learning.html">Machine Learning</a></li>
 								 <li ><a href="/category/uncategorized.html">Uncategorized</a></li>
 								 <li ><a href="/category/ya-si.html">雅思</a></li>
